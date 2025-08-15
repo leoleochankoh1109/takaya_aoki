@@ -19,8 +19,8 @@
       /* ボタン下の余白分を追加 */
       height: auto;
       /* まず WebP を優先して指定（対応ブラウザで使われる） */
-      background-image: image-set("img/noise.webp" type("image/webp") 1x,
-          "img/noise.png" type("image/png") 1x);
+      background-image: image-set("../img/noise.webp" type("image/webp") 1x,
+          "../img/noise.png" type("image/png") 1x);
       /* 古いブラウザや image-set 非対応向けの追加指定（安全網） */
       /* background-image: url('images/noise.png'); */
       background-repeat: repeat;
