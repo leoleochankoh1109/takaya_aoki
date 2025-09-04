@@ -36,7 +36,7 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
     }
 
     @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -79,7 +79,7 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;f
     }
 
     @media screen and (min-width: 601px) and (max-width: 1024px) {
