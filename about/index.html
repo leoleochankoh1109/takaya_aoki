@@ -4,38 +4,450 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-   <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow">
   <title>TAKAYA AOKI</title>
-<link rel="icon" href="img/favicon.png">
+  <link rel="icon" href="../img/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
     rel="stylesheet">
-      <link rel="stylesheet" href="https://github.com/leoleochankoh1109/takaya_aoki/css/common.css">
+  <link rel="stylesheet" href="../css/common.css">
   <style>
+    main {
+      padding-top: 0px !important;
 
+    }
+
+    .title2 {
+      padding-top: 120px;
+
+      display: flex;
+      align-items: baseline;
+      text-align: left;
+      gap: 12px;
+      /* 英語と日本語の間の余白 */
+      color: #2c3f4d;
+    }
+
+
+    @media screen and (min-width: 769px) {
+      .about-title-ja {
+        font-size: 30px;
+        color: #2c3f4d;
+      }
+
+      .about-title-ja .about-title-en {
+        font-size: 20px;
+        font-weight: 300;
+        /* ライト */
+        color: #555;
+        /* 少し淡い色にしても見やすい */
+      }
+
+    }
+
+
+
+    .title2 .title-en {
+      font-size: 40px;
+      font-weight: 700;
+      /* ボールド */
+    }
+
+    .title2 .title-ja {
+      font-size: 16px;
+      font-weight: 300;
+      /* ライト */
+      color: #555;
+      /* 少し淡い色にしても見やすい */
+    }
+
+    .about-title {
+      padding-top: 80px;
+      padding-bottom: 40px;
+      font-size: 24px;
+      margin: 0;
+      color: #2c3f4d;
+    }
+
+    @media screen and (min-width: 769px) {
+      .about-item {
+        padding-top: 60px;
+
+      }
+
+      .profile-text {
+
+        margin-top: 30px;
+        line-height: 28px;
+      }
+
+      .about-title {
+        font-size: 36px;
+
+      }
+
+    }
+
+    @media screen and (min-width: 769px) {
+      .timeline-m {
+        padding-left: 5%;
+
+        padding-right: 5%;
+        padding-bottom: 5%;
+      }
+    }
+
+
+    .timeline {
+      position: relative;
+      padding-left: 0px;
+      /* ドットのスペース分 */
+
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -8px;
+      /* 線の上に重ねる */
+      top: -5px;
+      width: 13px;
+      height: 13px;
+      background: #2c3f4d;
+      border-radius: 50%;
+
+    }
+
+    .timeline-content {
+
+      margin-left: 20px;
+    }
+
+    .timeline-content h3 {
+      margin-top: -10px;
+      font-weight: 300;
+      font-size: 14px;
+      color: #4A5C7A;
+    }
+
+    .timeline-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: #2c3f4d;
+
+    }
+
+    @media screen and (min-width: 769px) {
+
+      .timeline-title {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+    }
+
+    .timeline-content p {
+      margin-top: 5px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    @media screen and (min-width: 769px) {
+
+      .timeline-content p {
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      /* ドットの真ん中あたりから */
+      left: -2px;
+      /* ← この値が横位置 */
+      width: 2px;
+      height: calc(100% + 40px);
+      background: #2c3f4d;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+
+    /* スキル全体のレイアウト */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* 初期は1列（スマホ用） */
+      gap: 20px 20px;
+    }
+
+    /* PCのみ3列 */
+    @media screen and (min-width: 600px) and (max-width:769px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 行間と列間の余白 */
+      }
+    }
+
+    /* PCのみ3列 */
+    @media screen and (min-width: 769px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 行間と列間の余白 */
+      }
+    }
+
+    /* 各スキル項目 */
+    .skill-item {
+      text-align: left;
+      background-color: #9ca5ab;
+      padding: 20px;
+      color: #fff;
+    }
+
+    @media screen and (min-width: 769px) {
+      .skill-item {
+        width: 100%;
+
+
+      }
+
+
+    }
+
+    .skill-image {
+      display: block;
+      margin: 20px auto;
+      width: 120px;
+      height: auto;
+    }
+
+    @media screen and (min-width: 769px) {
+      .skill-image {
+        margin: 3% auto;
+        width: 30%;
+        height: auto;
+      }
+
+    }
+
+    .skill-title {
+      font-size: 16px;
+      margin-top: 20px;
+
+    }
+
+
+
+    .skill-time {
+      font-size: 12px;
+
+    }
+
+    .skill-text {
+      font-size: 14px;
+
+      font-weight: 400;
+      line-height: 24px;
+
+    }
+
+
+    @media screen and (min-width: 769px) {
+
+      .skill-title {
+        font-size: 20px;
+        margin-top: 20px;
+
+      }
+
+
+
+      .skill-time {
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: 300;
+      }
+
+      .skill-text {
+        font-size: 16px;
+
+        font-weight: 400;
+        line-height: 28px;
+
+      }
+    }
+
+
+
+
+
+    img.strong-image {
+      width: 100%;
+      height: auto;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 769px) {
+
+    img.strong-image {
+      width: 45%;
+    }
+
+  }
+    @media screen and (min-width: 1024px) {
+
+    img.strong-image {
+      width: 40%;
+    }
+
+    }
+
+    .strong {
+      margin-bottom: 100px;
+
+
+    }
+
+    .strong-title {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #2c3f4d;
+
+    }
+
+    @media screen and (min-width: 769px) {
+      .strong {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        flex-direction: row;
+        /* 画像とテキストの間の余白 */
+
+      }
+
+
+      .strong-title {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #2c3f4d;
+
+      }
+    }
+
+    .ishigaki {
+      margin-top: 60px;
+      width: 100%;
+
+
+    }
+
+    .about-main {
+
+      /* MVぶんだけ下げる */
+
+      min-height: 0;
+      padding-bottom: 40px;
+    }
+
+    .about-item {
+
+      /* MVぶんだけ下げる */
+
+      margin-bottom: 0;
+    }
+
+    .about-header {
+
+      /* MVぶんだけ下げる */
+      padding-left: 15%;
+      padding-bottom: 10%;
+      padding-right: 15%;
+      font-weight: 500;
+
+
+      /* ボタン下の余白分を追加 */
+      height: auto;
+      /* まず WebP を優先して指定（対応ブラウザで使われる） */
+      background-image: image-set("../img/noise.webp" type("image/webp") 1x,
+          "../img/noise.png" type("image/png") 1x);
+      /* 古いブラウザや image-set 非対応向けの追加指定（安全網） */
+      /* background-image: url('images/noise.png'); */
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      /* 例：元画像が256pxなら4分の1のサイズで敷き詰め */
+      background-position: 0 0;
+      background-attachment: scroll;
+      /* 固定したければ 'fixed' に変更 */
+
+
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 1024px) {
+      .about-header {
+        padding-bottom: 10%;
+        padding-left: 10%;
+        min-height: 0;
+        padding-right: 10%;
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      .about-header {
+
+        padding-left: 5%;
+        padding-right: 5%;
+        font-weight: 500;
+
+        padding-bottom: 10vw;
+      }
+    }
+
+
+
+    @media screen and (max-width:769px) {
+      .about-item {
+        padding-top: 40px;
+      }
+
+      .about-image {
+
+        margin: 0 auto 20px;
+      }
+
+
+    }
   </style>
 </head>
 
 <body>
-  <!-- ローディングアニメ -->
+
 
   <div class="hamburger" id="hamburger">
     <span></span>
     <span></span>
   </div>
 
-  <div class="mv-wrapper">
-    <!-- MVの上に文字を重ねる -->
-    <a href="index.html" class="logo">
-      <img src="img/logo.svg" alt="ロゴ">
-    </a>
-    <!-- ハンバーガーボタン -->
-
-    <img src="img/MV-pc.jpg" alt="メインビジュアル（PC）" class="main-visual pc">
-    <img src="img/MV-sp.jpg" alt="メインビジュアル（スマホ）" class="main-visual sp">
-    <h1 class="mv-text">
-      <span>TAKAYA<br>AOKI</span>
-    </h1>
-  </div>
+  <a href="../index.html" class="logo">
+    <img src="../img/logo.svg" alt="ロゴ">
+  </a>
 
   <div class="overlay" id="overlay"></div>
 
@@ -49,74 +461,240 @@
   </nav>
 
   <!-- ページ本体 -->
-  <main>
-    <div class="title">
-      <span class="title-en">Works</span>
-      <span class="title-ja">制作物</span>
-    </div>
 
-    <div class="fade-in">
-      <img src="img/dtp.jpg" alt="DTP作品" class="works-image">
-      <div class="category-title">DTPデザイン</div>
-      <p class="category-text">チラシ・ポスター類の制作実績をご紹介します。ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-        <br>
-        <a href="dtp.html" class="more-link">詳しくみる→</a>
-      </p>
-    </div>
 
+  <div class="about-header">
     <div class="fade-in">
-      <img src="img/web.jpg" alt="Webデザイン" class="works-image">
-      <div class="category-title">WEBデザイン</div>
-      <p class="category-text">Webサイトの制作実績をご紹介します。ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-        <br>
-        <a href="web.html" class="more-link">詳しくみる→</a>
-      </p>
-    </div>
-    <div class="fade-in">
-      <img src="img/edit.jpg" alt="エディトリアルデザイン" class="works-image">
-      <div class="category-title">エディトリアルデザイン</div>
-      <p class="category-text">冊子などの制作実績をご紹介します。ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-        <br>
-        <a href="editorial.html" class="more-link">詳しくみる→</a>
-      </p>
-    </div>
-    <div class="fade-in">
-      <img src="img/banner.jpg" alt="バナーデザイン" class="works-image">
-      <div class="category-title">バナーデザイン</div>
-      <p class="category-text">バナーの制作実績をご紹介します。ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-        <br>
-        <a href="banner.html" class="more-link">詳しくみる→</a>
-      </p>
-    </div>
-    <div class="fade-in">
-      <img src="img/other.jpg" alt="その他デザイン" class="works-image">
-      <div class="category-title">その他デザイン</div>
-      <p class="category-text">スライドやパッケージなどの制作実績をご紹介します。ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-        <br>
-        <a href="other.html" class="more-link">詳しくみる→</a>
-      </p>
-    </div>
-    <div class="fade-in">
-      <div class="title">
+      <div class="title2">
         <span class="title-en">About</span>
         <span class="title-ja">自己紹介</span>
       </div>
-      <img src="img/about.jpg" alt="自己紹介写真" class="about-image">
-      <div class="profile">
-        <span class="about-title-ja">青木 孝也 </span>
-        <span class="about-title-en">Aoki Takaya</span>
-      </div>
-      <p class="profile-text">1991年11月9日生まれ。新卒でマニュアルのライターとして2年勤務後、部署異動のため広告・販促物・webサイトのデザイナー・ディレクター・ライターとしての仕事に従事。<br>
-        数回の転職ののち、教育業界でインハ ウスのデザイナー・ディレクター・ライターとして勤務中。<br>
-        よりデザイナーとして成長できる環境を求め、転職活動をしています。</p>
 
-      <a href="about.html" class="profile-button">プロフィールを詳しく見る</a>
+      <img src="../img/about-ishigaki.jpg" alt="about石垣島" class="ishigaki">
     </div>
 
+  </div>
+
+  <div class="about-main">
+    <div class="fade-in">
+      <div class="about-item">
+        <img src="../img/about.jpg" alt="自己紹介写真" class="about-image">
+        <div class="profile-column">
+          <div class="profile">
+            <span class="about-title-ja">青木 孝也 </span>
+            <span class="about-title-en">Aoki Takaya</span>
+          </div>
+          <p class="profile-text">
+            1991年11月9日生まれ。新卒でマニュアルのライターとして2年勤務後、部署異動のため広告・販促物・webサイトのデザイナー・ディレクター・ライターとしての仕事に従事。<br>
+            数回の転職ののち、教育業界でインハウスのデザイナー・ディレクター・ライターとして勤務中。<br>
+            よりデザイナーとして成長できる環境を求め、転職活動をしています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <main>
+
+
+    <div class="timeline-m">
+      <div class="fade-in">
+        <div class="about-title">これまでの職務経歴</div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="fade-in">
+              <h3>2015年4月～2018年9月</h3>
+              <div class="timeline-title">株式会社日立テクニカルコミュニケーションズ</div>
+              <p>4 年制大学を卒業後、新卒で入社し、2 年間テクニカルライターの業務に従事しました。この業務の
+                中で、マニュアル中の図作成を通してデザインの基礎を学びました。<br><br>
+                2017 年4 月にUXデザインに関する部署に移動し、日立製作所のセキュリティ製品の広告宣伝・展示会の企画制作に従事。チラシや展示パネル・セミナー資料のデザイナー業務も担当し、より複雑なデザインを学びました。
+                <br><br>ポータルサイトの立ち上げでは社内情報共有webの運営にも関わり、webディレクション・ライティング・HTML・CSS の基本を習得しています。
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="fade-in">
+              <h3>2018年10月～2019年12月</h3>
+              <div class="timeline-title">株式会社オリエンタルランド</div>
+              <p>アルバイトとしてディズニーシーのアトラクション「ヴェネツィアンゴンドラ」のキャストに従事。お客様へのホスピタリティなどを学びました。</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="fade-in">
+              <h3>2020年1月～2022年12月</h3>
+              <div class="timeline-title">一般社団法人演奏家権利処理合同機構MPN</div>
+              <p>広報宣伝を担当し、一社目で学んだことを活かしながら、チラシ・広報誌の制作に従事しました。</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="fade-in">
+              <h3>2023年1月～ 現職</h3>
+              <div class="timeline-title">株式会社リソー教育</div>
+              <p>学習塾TOMAS に関する広報宣伝を担当。チラシ・バナー画像などのデザイナーを担当するほか、ディレクターとして外注の制作会社と連携しながらのweb ページ制作・雑誌編集・その他広告物の制作も担当しました。
+                <br><br>
+                またSNS についても、X の運営やInstagram・YouTube 用の動画制作の運営外注制作会社へのディレクション）を行っています。
+                2023 年9 月に主任職に、2025 年3 月に主事職に昇格しています。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="fade-in">
+              <h3>現在</h3>
+              <div class="timeline-title">より成長できる環境を求め、転職活動中。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="fade-in">
+      <div class="about-title">身に付けたスキル</div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-item fade-in">
+        <img src="../img/skills-01.png" alt="イラレ" class="skill-image">
+        <div class="skill-title">Adobe Illustrator</div>
+        <div class="skill-time">使用期間：約3年</div>
+        <p class="skill-text">チラシやパンフレット・イラストの制作に使用。印刷会社への入稿も実施しています。
+        </p>
+
+      </div>
+
+      <div class="skill-item fade-in">
+        <img src="../img/skills-02.png" alt="フォトショ" class="skill-image">
+        <div class="skill-title">Adobe Photoshop</div>
+        <div class="skill-time">使用期間：約3年</div>
+        <p class="skill-text">バナー画像作成や写真の加工・レタッチに使用。
+        </p>
+ 
+      </div>
+
+      <div class="skill-item fade-in">
+        <img src="../img/skills-03.png" alt="html" class="skill-image">
+        <div class="skill-title">HTML・CSS</div>
+        <div class="skill-time">使用期間：約3年</div>
+        <p class="skill-text">自社ホームページ・ポートフォリオサイトの作成などに使用。
+        </p>
+ 
+      </div>
+
+      <div class="skill-item fade-in">
+        <img src="../img/skills-04.png" alt="javascript" class="skill-image">
+        <div class="skill-title">Javascript</div>
+        <div class="skill-time">使用期間：1年未満</div>
+        <p class="skill-text">自社ホームページ・ポートフォリオサイトの作成などに使用。継続して勉強中です。
+        </p>
+      </div>
+
+      <div class="skill-item fade-in">
+        <img src="../img/skills-05.png" alt="Figma" class="skill-image">
+        <div class="skill-title">Figma</div>
+        <div class="skill-time">使用期間：約2年</div>
+        <p class="skill-text">ワイヤーフレームやWebデザイン制作に使用。アニメーションなども作成しています。
+        </p>
+ 
+      </div>
+
+      <div class="skill-item fade-in">
+        <img src="../img/skills-06.png" alt="Adobe Premiere Pro／After Effect" class="skill-image">
+        <div class="skill-title">Adobe Premiere Pro／Adobe After Effect</div>
+        <div class="skill-time">使用期間：1年未満</div>
+        <p class="skill-text">動画コンテンツの制作や、Webサイト用のアニメーションGIF作成に使用。
+        </p>
+
+      </div>
+      <div class="skill-item fade-in">
+        <img src="../img/skills-07.png" alt="パワーポイント" class="skill-image">
+        <div class="skill-title">Microsoft Powerpoint</div>
+        <div class="skill-time">使用期間：約6年</div>
+        <p class="skill-text">チラシやスライド資料の制作などに使用。 <br>
+        </p>
+
+
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <div class="about-title">わたしの強み</div>
+    </div>
+
+    <div class="fade-in">
+      <div class="strong">
+
+        <img src="../img/strong-01.jpg" alt="センスに頼らないデザイン" class="strong-image">
+        <div class="strong-wrapper">
+          <div class="strong-title">センスに頼らないデザイン</div>
+          <p class="category-text">
+            クリエイティブな業務にはセンスだけが求められるわけではありません。色使いや配置、図形・写真が与える印象などには一定のルールがあり、ルールに沿って作ることで、多くの人が受け入れやすいデザインを作ることができます。私はそのようなデザイン力を磨いてきました。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <div class="strong">
+
+        <img src="../img/strong-02.jpg" alt="目的を達成するためのデザイン" class="strong-image">
+        <div class="strong-wrapper">
+          <div class="strong-title">目的を達成するためのデザイン</div>
+          <p class="category-text">
+            デザインは、ただ見栄えが良ければ良いというものはなく、必ず目的（顧客の獲得など）や制作の条件（必要な要素・ターゲット設定など）があります。私はヒアリングや調査などから目的・条件を明確にし、そしてそれらを満たすことができる表現力を磨いてきました。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <div class="strong">
+
+        <img src="../img/strong-03.jpg" alt="デザイン以外の広範な経験" class="strong-image">
+
+        <div class="strong-wrapper">
+          <div class="strong-title">デザイン以外の広範な経験</div>
+          <p class="category-text">
+            私はライティングやディレクションなどの経験もあります。またデザイナーとしても顧客へのヒアリングや後進への指示出し・レクチャの経験、事業会社・制作会社へ両方所属した経験、そしてIT
+            関連企業・権利管理団体・教育企業などのさまざまな業種の会社に所属した経験もあり、広範な経験・知識や柔軟さを持ち合わせています。</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="fade-in">
+      <div class="strong">
+        <img src="../img/strong-04.jpg" alt="常により良いものを模索し続ける向上心" class="strong-image">
+
+        <div class="strong-wrapper">
+          <div class="strong-title">常により良いものを模索し続ける向上心</div>
+          <p class="category-text">
+            一つ良いものを作れたとしても、それがあらゆる状況で最善とは限りません。すでにあるものを使うだけではなく、常に「より良くするにはどうすれば良いか」を考えるようにしています。実務経験の少ないwebデザインやロゴデザイン、パッケージデザイン、イラスト作成などにも挑戦し、できることの幅を広げています。
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
 
   <a href="#" id="toTop" class="to-top">
-   <img src="img/gototop.svg" alt="トップへ">
+    <img src="../img/gototop.svg" alt="トップへ">
   </a>
 
   <footer>
@@ -147,7 +725,7 @@
 
   </footer>
 
-<script src="js/common.js"></script>
+  <script src="../js/common.js"></script>
 </body>
 
 </html>

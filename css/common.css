@@ -10,9 +10,11 @@
     }
 
     main {
+      padding-top: 70%;
+      /* MVぶんだけ下げる */
+      padding-left: 15%;
 
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-right: 15%;
       font-weight: 500;
       min-height: 100vh;
       padding-bottom: 50px;
@@ -37,13 +39,69 @@
       font-family: 'Zen Kaku Gothic New', sans-serif;
     }
 
-    @media screen and (max-width:600px) {
+    @media screen and (min-width: 601px) and (max-width: 1024px) {
       main {
-        min-height: 50vh;
+
+        padding-left: 10%;
+
+        padding-right: 10%;
       }
     }
 
-    main {}
+    @media screen and (max-width:600px) {
+      main {
+        padding-top: 200%;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-weight: 500;
+        min-height: 100vh;
+        padding-bottom: 50px;
+      }
+    }
+
+    .about-main {
+
+      /* MVぶんだけ下げる */
+      padding-left: 15%;
+
+      padding-right: 15%;
+      font-weight: 500;
+      min-height: 100vh;
+      padding-bottom: 50px;
+      /* ボタン下の余白分を追加 */
+      height: auto;
+      /* まず WebP を優先して指定（対応ブラウザで使われる） */
+  background: url("../img/about-back.jpeg") no-repeat center center fixed;
+  background-size: cover; /* 画面いっぱいに拡大・縮小 */
+      /* 固定したければ 'fixed' に変更 */
+
+
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 1024px) {
+      .about-main {
+
+        padding-left: 10%;
+
+        padding-right: 10%;
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      .about-main {
+
+        padding-left: 5%;
+        padding-right: 5%;
+        font-weight: 500;
+        min-height: 100vh;
+        padding-bottom: 50px;
+      }
+    }
+
 
     /* ローディング画面 */
     #loading {
@@ -85,7 +143,7 @@
       /* 上から20px */
       left: 20px;
       /* 左から20px */
-      z-index: 10;
+      z-index: 2000;
       /* MVより前面に */
     }
 
@@ -107,7 +165,7 @@
       flex-direction: column;
       justify-content: space-between;
       cursor: pointer;
-      z-index: 1001;
+      z-index: 9902;
       gap: 7px;
     }
 
@@ -139,14 +197,21 @@
     /* オーバーレイ */
     .overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(24, 45, 52, 0.8);
-      display: none;
-      z-index: 1000;
+      inset: 0;
+      background: rgba(41, 46, 50, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1001;
+      transform: translateX(-100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
+
+    .overlay.active {
+      opacity: 1;
+      transform: translateX(0);
+
+    }
+
 
     /* サイドメニュー */
     .side-menu {
@@ -159,8 +224,9 @@
       height: 100%;
       padding-top: 20px;
       transition: left 0.3s ease;
-      z-index: 1002;
+      z-index: 9999;
     }
+
 
     .side-menu ul {
       list-style: none;
@@ -183,44 +249,156 @@
       color: #fff
     }
 
+    @media screen and (min-width:769px) {
+
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(41, 46, 50, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1001;
+        transform: translateX(100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        text-align: right;
+      }
+
+      .overlay.active {
+        opacity: 1;
+        transform: translateX(0%);
+        text-align: right;
+      }
+
+      .side-menu {
+        position: fixed;
+        color: #fff;
+        font-size: 24px;
+        left: auto;
+        top: 0;
+        right: -250px;
+        width: auto;
+        height: 100%;
+        padding-top: 50px;
+        transition: right 0.3s ease;
+        z-index: 9900;
+        text-align: right;
+      }
+
+      .side-menu.open {
+        text-align: right;
+        right: 0;
+      }
+
+      .side-menu li {
+        text-align: right;
+        margin-left: 0;
+        margin-right: 80px;
+        padding-top: 30px;
+        cursor: pointer;
+      }
+
+    }
+
     /* メインビジュアル */
     .main-visual {
-      position: absolute;
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      z-index: 1000;
+
+    }
+
+    .main-visual img {
       width: 100%;
       height: auto;
+      /* 元の縦横比を維持 */
       display: block;
-      z-index: 2;
+      /* 下の隙間を消すため */
     }
 
-    /* 768px以下のときはスマホ版を表示 */
-    @media screen and (max-width: 768px) {
-      .main-visual.pc {
-        display: none;
-      }
+    .main-visual.pc {
 
-      .main-visual.sp {
-        display: block;
+      display: block;
 
-      }
     }
 
-    @media screen and (min-width: 769px) {
-      .main-visual.pc {
-        display: block;
-      }
-
-      .main-visual.sp {
-        display: none;
-      }
+    .main-visual.sp {
+      display: none;
     }
 
-    .mv-wrapper {
-      position: relative;
-      /* 中の絶対配置要素の基準にする */
+    .slideshow {
+      position: absolute;
       width: 100%;
-      z-index: 10;
-      height: 715px;
+      overflow: visible;
+
     }
+
+    .slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      opacity: 0;
+      transition: opacity 2.5s ease-in-out;
+    }
+
+    /* 768px以下はスマホ用に切り替え */
+    @media screen and (max-width: 600px) {
+      .main-visual.pc {
+        display: none;
+      }
+
+      .main-visual.sp {
+        display: block;
+      }
+
+
+      .slideshow {
+        position: absolute;
+        width: 100%;
+        overflow: visible;
+      }
+
+      .slideshow img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 2.5s ease-in-out;
+      }
+
+      .mv-text {
+        position: absolute;
+        /* MVの上に重ねる */
+        bottom: 20px;
+        /* 下から20px */
+        left: 20px;
+        /* 左から20px */
+        z-index: 1010;
+        /* 画像より前面 */
+        color: #2c3f4d;
+        /* 文字色 白に */
+        font-size: 80px;
+        /* 好きな大きさに調整 */
+        font-weight: 700;
+        /* 太字 */
+        line-height: 1.1;
+        /* 行間調整 */
+      }
+
+    }
+
+
+
+    .slideshow img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+
 
     .mv-text {
       position: absolute;
@@ -233,11 +411,16 @@
       /* 画像より前面 */
       color: #2c3f4d;
       /* 文字色 白に */
-      font-size: 80px;
+      font-size: clamp(16px, 15vw, 250px);
       /* 好きな大きさに調整 */
       font-weight: 700;
       /* 太字 */
-      line-height: 1.1;
+      line-height: 1.2;
+      padding-left: 0.2em;
+      /* 文字サイズに応じて変わる */
+      padding-bottom: 0.1em;
+      /* 文字サイズに応じて変わる */
+
       /* 行間調整 */
     }
 
@@ -291,6 +474,15 @@
       color: #2c3f4d;
     }
 
+    @media screen and (min-width: 769px) {
+
+      .title {
+        margin-bottom: 10%;
+
+      }
+
+    }
+
     .title .title-en {
       font-size: 40px;
       font-weight: 700;
@@ -305,34 +497,135 @@
       /* 少し淡い色にしても見やすい */
     }
 
-
-    img.works-image {
-      width: 500px;
-      height: auto;
-    }
-
-    @media screen and (max-width: 600px) {
-      img.works-image {
-        width: 335px;
-        /* SPの時の横幅 */
-        margin-top: 50px;
-      }
-    }
-
     .category-title {
-      font-size: 24px;
-      margin-top: 20px;
+
       color: #2c3f4d;
     }
 
     .category-text {
-      font-size: 14px;
-      margin-top: 10px;
       color: #3e3e3e;
       font-weight: 400;
       line-height: 24px;
 
     }
+
+    @media screen and (min-width: 600px) and (max-width: 1024px) {
+      .category-title {
+
+        font-size: 28px;
+      }
+
+      .category-text {
+        font-size: 12px;
+        line-height: 24px;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      .works-item {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        flex-direction: row;
+        /* 画像とテキストの間の余白 */
+
+      }
+
+      .works-item2 {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        flex-direction: row-reverse;
+        /* 画像とテキストの間の余白 */
+
+      }
+
+      img.works-image {
+        width: 50%;
+        max-width: 500px;
+        height: auto;
+      }
+
+      .about-item {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        /* 画像とテキストの間の余白 */
+      }
+
+
+      .profile-column {
+
+        display: flex;
+        flex-direction: column;
+        /* 縦並び */
+        justify-content: flex-start;
+        /* 上から順に並べる */
+        width: 60%;
+      }
+
+
+      .works-text {
+        display: flex;
+        flex-direction: column;
+        /* 縦並び */
+        justify-content: flex-start;
+        /* 上から順に並べる */
+        width: 50%;
+
+      }
+
+      .category-title {
+        font-size: 32px;
+        margin-top: 0;
+        padding-bottom: 10px;
+      }
+
+      .category-text {
+        font-size: 16px;
+        line-height: 28px;
+
+
+      }
+
+      .more-link {
+        align-self: flex-end;
+      }
+
+
+
+    }
+
+    @media screen and (max-width: 768px) {
+      img.works-image {
+        width: 100%;
+        /* SPの時の横幅 */
+        margin-top: 50px;
+      }
+
+      .category-title {
+        font-size: 24px;
+        margin-top: 20px;
+        color: #2c3f4d;
+      }
+
+      .category-text {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #3e3e3e;
+        font-weight: 400;
+        line-height: 24px;
+
+      }
+    }
+
+
 
     .more-link {
       display: inline-block;
@@ -364,6 +657,15 @@
       /* 中央寄せ＆上下余白 */
     }
 
+    @media screen and (min-width: 769px) {
+      .about-image {
+        width: 25vw;
+        height: 25vw;
+        margin-top: 0;
+      }
+
+    }
+
     .profile {
       display: flex;
       align-items: baseline;
@@ -386,12 +688,34 @@
       /* 少し淡い色にしても見やすい */
     }
 
+    @media screen and (min-width: 769px) {
+      .about-title-ja {
+        font-size: 30px;
+        color: #2c3f4d;
+      }
+
+      .about-title-ja .about-title-en {
+        font-size: 20px;
+        font-weight: 300;
+        /* ライト */
+        color: #555;
+        /* 少し淡い色にしても見やすい */
+      }
+
+    }
+
     .profile-text {
       font-size: 14px;
       margin-top: 10px;
       color: #3e3e3e;
       font-weight: 400;
       line-height: 24px;
+    }
+
+    @media screen and (min-width: 769px) {
+      .profile-text {
+        font-size: 16px;
+      }
     }
 
     .profile-button {
@@ -412,6 +736,15 @@
       /* 枠線追加 */
       border-radius: 100px;
       transition: background-color 0.3s ease;
+    }
+
+
+    @media screen and (min-width: 769px) {
+      .profile-button {
+        margin-top: 50px;
+        text-align: left;
+      }
+
     }
 
     .profile-button:hover {
@@ -448,9 +781,7 @@
     }
 
     /* ホバー時 */
-    .to-top:hover {
-
-    }
+    .to-top:hover {}
 
     footer {
       display: block;
@@ -459,16 +790,35 @@
       color: #fff;
     }
 
+    @media screen and (min-width: 769px) {
+      footer {
+        display: block;
+        background-color: #2c3f4d;
+        padding: 40px 15% 0;
+        color: #fff;
+      }
+    }
+
     footer .footer-name {
       font-size: 48px;
       font-weight: 700;
       line-height: 48px;
     }
 
+    @media screen and (min-width: 769px) {
+      footer .footer-name {
+        font-size: 10vw;
+        font-weight: 700;
+        line-height: 10vw;
+      }
+    }
+
     .contact {
       margin-top: 30px;
       line-height: 1.2;
     }
+
+
 
     .contact-text {
       font-size: 16px;
@@ -484,6 +834,31 @@
       text-decoration: underline;
       display: block;
       /* 上下に幅を取れるように */
+    }
+
+    @media screen and (min-width: 769px) {
+      .contact {
+        margin-top: 50px;
+        line-height: 1.2;
+      }
+
+      .contact-text {
+        font-size: 1vw;
+        display: block;
+        /* 上下にちゃんと幅を取れるように */
+        margin-bottom: 0;
+        /* 下の余白を調整 */
+      }
+
+      .contact-mail {
+        font-weight: 500;
+        font-size: 5vw;
+        text-decoration: underline;
+        display: block;
+        /* 上下に幅を取れるように */
+      }
+
+
     }
 
     .links {
@@ -507,7 +882,29 @@
     .link2third {
       margin: 0 10px 10px;
       font-size: 14px;
+      white-space: nowrap;
     }
+
+    @media screen and (min-width: 769px) {
+      .links {
+        margin-top: 50px;
+      }
+
+      .link2second {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+
+
+      .link2third {
+        margin: 0 10px 10px;
+        font-size: 16px;
+        white-space: normal;
+      }
+
+    }
+
 
     .copyright {
       margin-top: 30px;
