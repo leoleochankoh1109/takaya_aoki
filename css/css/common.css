@@ -36,7 +36,8 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Meiryo", "MS PGothic", sans-serif;
+
     }
 
     @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -71,16 +72,20 @@
       /* ボタン下の余白分を追加 */
       height: auto;
       /* まず WebP を優先して指定（対応ブラウザで使われる） */
-  background: url("../img/about-back.jpeg") no-repeat center center fixed;
-  background-size: cover; /* 画面いっぱいに拡大・縮小 */
+      background: url("../img/about-back.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      /* 画面いっぱいに拡大・縮小 */
       /* 固定したければ 'fixed' に変更 */
 
 
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;f
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
     }
+
+
+
 
     @media screen and (min-width: 601px) and (max-width: 1024px) {
       .about-main {
@@ -93,7 +98,8 @@
 
     @media screen and (max-width:600px) {
       .about-main {
-
+      background: url("../img/about-back_sp.jpg") no-repeat center center fixed;
+      background-size: cover;
         padding-left: 5%;
         padding-right: 5%;
         font-weight: 500;
@@ -120,17 +126,17 @@
       visibility: hidden;
     }
 
-    #loading img {
-      width: 400px;
+    #loading video {
+      width: 30%;
       /* 画像サイズは調整OK */
-      height: 200px;
+      height: auto;
     }
 
     @media screen and (max-width:600px) {
-      #loading img {
-        width: 200px;
+      #loading video {
+        width: 50%;
         /* 画像サイズは調整OK */
-        height: 100px;
+        height: auto;
       }
     }
 
@@ -225,6 +231,7 @@
       padding-top: 20px;
       transition: left 0.3s ease;
       z-index: 9999;
+      overflow: hidden;
     }
 
 
@@ -246,7 +253,8 @@
 
     .side-menu a {
       text-decoration: none;
-      color: #fff
+      color: #fff;
+      overflow: hidden;
     }
 
     @media screen and (min-width:769px) {
@@ -258,7 +266,7 @@
         opacity: 0;
         pointer-events: none;
         z-index: 1001;
-        transform: translateX(100%);
+        transform: translateX(200%);
         transition: opacity 0.3s ease, transform 0.3s ease;
         text-align: right;
       }
@@ -272,10 +280,10 @@
       .side-menu {
         position: fixed;
         color: #fff;
-        font-size: 24px;
+        font-size: 20px;
         left: auto;
         top: 0;
-        right: -250px;
+        right: -400px;
         width: auto;
         height: 100%;
         padding-top: 50px;
@@ -807,9 +815,9 @@
 
     @media screen and (min-width: 769px) {
       footer .footer-name {
-        font-size: 10vw;
+        padding-top: 2%;
+        font-size: 5vw;
         font-weight: 700;
-        line-height: 10vw;
       }
     }
 
@@ -838,12 +846,12 @@
 
     @media screen and (min-width: 769px) {
       .contact {
-        margin-top: 50px;
+        margin-top: 5%;
         line-height: 1.2;
       }
 
       .contact-text {
-        font-size: 1vw;
+        font-size: 2vw;
         display: block;
         /* 上下にちゃんと幅を取れるように */
         margin-bottom: 0;
@@ -852,7 +860,7 @@
 
       .contact-mail {
         font-weight: 500;
-        font-size: 5vw;
+        font-size: 4vw;
         text-decoration: underline;
         display: block;
         /* 上下に幅を取れるように */
@@ -875,19 +883,20 @@
 
     .link2second {
       display: block;
-      font-size: 18px;
+      font-size: 14px;
       margin-bottom: 0;
     }
 
     .link2third {
-      margin: 0 10px 10px;
+      margin: 0 0 10px;
       font-size: 14px;
       white-space: nowrap;
+      line-height: 2
     }
 
     @media screen and (min-width: 769px) {
       .links {
-        margin-top: 50px;
+        margin-top: 5%;
       }
 
       .link2second {
@@ -898,7 +907,7 @@
 
 
       .link2third {
-        margin: 0 10px 10px;
+        margin: 0 0 10px;
         font-size: 16px;
         white-space: normal;
       }
@@ -922,4 +931,45 @@
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+
+    /* スキル全体のレイアウト */
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* 初期は1列（スマホ用） */
+      gap: 20px 20px;
+    }
+
+
+    @media screen and (min-width: 769px) {
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 行間と列間の余白 */
+      }
+    }
+
+    .sp-br {
+      display: none;
+      /* デフォルトは非表示（PCなど） */
+    }
+
+    @media screen and (max-width: 600px) {
+      .sp-br {
+        display: inline;
+        /* スマホサイズでだけ表示 */
+      }
+    }
+
+    .pc-slash {
+      display: none;
+      /* デフォルトは非表示（PCなど） */
+    }
+
+    @media screen and (min-width: 601px) {
+      .pc-slash {
+        display: inline;
+        /* スマホサイズでだけ表示 */
+      }
     }
