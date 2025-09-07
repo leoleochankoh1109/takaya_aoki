@@ -82,8 +82,10 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-      f
     }
+
+
+
 
     @media screen and (min-width: 601px) and (max-width: 1024px) {
       .about-main {
@@ -96,7 +98,8 @@
 
     @media screen and (max-width:600px) {
       .about-main {
-
+      background: url("../img/about-back_sp.jpg") no-repeat center center fixed;
+      background-size: cover;
         padding-left: 5%;
         padding-right: 5%;
         font-weight: 500;
@@ -228,7 +231,7 @@
       padding-top: 20px;
       transition: left 0.3s ease;
       z-index: 9999;
-        overflow: hidden;
+      overflow: hidden;
     }
 
 
@@ -251,7 +254,7 @@
     .side-menu a {
       text-decoration: none;
       color: #fff;
-      overflow: hidden;   
+      overflow: hidden;
     }
 
     @media screen and (min-width:769px) {
@@ -812,7 +815,7 @@
 
     @media screen and (min-width: 769px) {
       footer .footer-name {
-        padding-top:2%;
+        padding-top: 2%;
         font-size: 5vw;
         font-weight: 700;
       }
@@ -888,7 +891,7 @@
       margin: 0 0 10px;
       font-size: 14px;
       white-space: nowrap;
-line-height: 2
+      line-height: 2
     }
 
     @media screen and (min-width: 769px) {
