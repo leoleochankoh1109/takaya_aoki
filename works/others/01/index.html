@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>TAKAYA AOKI</title>
+  <link rel="icon" href="../../../img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/common.css">
+  <style>
+    main {
+
+      padding-top: 0;
+    }
+
+
+
+    .works-image4 {
+      padding-top: 120px;
+
+      width: auto;
+      /* 切り抜きたい枠の幅 */
+      margin-bottom: 2vw;
+
+    }
+
+    .works-image4 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1);
+      /* ← 数字を大きくすると拡大 */
+    }
+
+
+
+    @media screen and (min-width: 601px) {
+
+
+      .works-image4 {
+        margin: 0;
+
+        width: 100%;
+        /* 切り抜きたい枠の幅 */
+        height: auto;
+
+      }
+
+      .works-image4 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 10%;
+        /* 上下の開始位置を10%ずらす */
+
+        /* ← 数字を大きくすると拡大 */
+      }
+    }
+
+    .works-title {
+      margin-top: 2vw;
+      font-weight: 400;
+      font-size: 16px;
+      color: #3e3e3e;
+    }
+
+    .works-where {
+      font-weight: 300;
+      font-size: 14px;
+      color: #3e3e3e;
+    }
+
+    p {
+      font-size: 14px;
+      margin-top: 20px;
+      color: #3e3e3e;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    @media screen and (min-width: 601px) {
+
+      .works-title {
+        margin-top: 3vw;
+        font-weight: 500;
+        font-size: 18px;
+        color: #3e3e3e;
+      }
+
+      .works-where {
+        font-weight: 300;
+        font-size: 16px;
+        color: #3e3e3e;
+      }
+
+      p {
+        font-size: 18px;
+        margin-top: 5vw;
+        color: #3e3e3e;
+        font-weight: 400;
+        line-height: 28px;
+      }
+
+    }
+
+    .matrix {
+      margin-top: 10vw;
+      margin-bottom: 20vw;
+
+    }
+
+    /* 1列目 */
+    td:nth-child(1) {
+      font-weight: 300;
+      font-size: 16px;
+
+      color: #2c3f4d;
+
+
+    }
+
+    /* 2列目 */
+    td:nth-child(2) {
+      font-weight: 500;
+      font-size: 16px;
+      color: #3e3e3e;
+
+    }
+
+    @media screen and (min-width: 601px) {
+      .matrix {
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+        padding: 0 5vw
+      }
+
+      /* 1列目 */
+      td:nth-child(1) {
+        font-weight: 300;
+        font-size: 18px;
+        color: #2c3f4d;
+        width: 50%;
+
+      }
+
+      /* 2列目 */
+      td:nth-child(2) {
+        font-weight: 500;
+        font-size: 18px;
+        color: #3e3e3e;
+        width: 50%;
+      }
+    }
+
+
+
+    table {
+      border-collapse: collapse;
+      /* 線をスッキリまとめる */
+      text-align: center;
+        width: 100%;
+    }
+
+    td {
+      padding: 25px 30px;
+      /* セル内テキストと線の間に余白 */
+    }
+
+    table tr {
+      border-bottom: 0.5px solid #4A5C7A;
+    }
+
+    @media screen and (min-width: 601px) {
+      table {
+        border-collapse: collapse;
+        /* 線をスッキリまとめる */
+        text-align: center;
+        width: 100%;
+      }
+    td {
+      padding: 25px 30px;
+      /* セル内テキストと線の間に余白 */
+    }
+
+
+    }
+
+    .whole-view {
+      background-color: #d9d9d9;
+      padding: 20px 20px 40px;
+      text-align: center;
+
+    }
+
+    .whole-view img {
+      padding: 40px 0;
+      width: 80vw;
+    }
+
+    @media screen and (min-width: 601px) {
+    .whole-view img {
+      padding: 40px 0;
+      width: 50vw;
+    }
+    }
+  .tweet-wrapper {
+    display: flex;
+    justify-content: center; /* 横方向に中央寄せ */
+    margin: 40px 0;          /* 上下に余白を追加（お好みで） */
+  }
+</style>
+  </style>
+</head>
+
+<body>
+
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+  </div>
+
+  <a href="../../index.html" class="logo">
+    <img src="../../../img/logo.svg" alt="ロゴ">
+  </a>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- サイドメニュー -->
+ <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/">Home</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/dtp/">DTPデザイン</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/web/">Webデザイン</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/banner/">バナーデザイン</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/illust/">イラスト制作</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/about/">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- ページ本体 -->
+  <main>
+
+    <div class="fade-in">
+      <div class="works-image4">
+        <img src="../../../img/other01.jpg" alt="DTP作品">
+      </div>
+
+      <div class="works-title">X投稿用　イベント紹介動画</div>
+      <div class="works-where">現職</div>
+    </div>
+
+    <div class="fade-in">
+      <p> 現職で管理しているX（旧Twitter）に投稿する動画。イベントなどの内容を紹介するもので、それぞれのイベントのテーマに即したデザインと、1分程度で短く雰囲気を伝えることを意識しました。    </div>
+
+    <div class="fade-in">
+      <div class="matrix">
+        <table>
+          <tr>
+            <td>制作時期</td>
+            <td>2025年7月～8月</td>
+          </tr>
+
+          <tr>
+            <td>仕様</td>
+            <td>動画（mp4）</td>
+          </tr>
+          <tr>
+            <td>使用ツール</td>
+            <td>Adobe Premiere Pro<br>Adobe After Effect</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+
+  <div class="whole-view">
+
+
+        <div class="fade-in tweet-wrapper">
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="ja" dir="ltr">温めると固まり、冷やすと溶ける！<br>あべこべなアイスクリームをつくろう！<br><br>👩🏻‍🔬TOMASサイエンス教室第35弾🧑‍🔬<br>「HOT!? アイスクリーム実験」好評受付中！<br><br>👇お申し込みはこちら（参加無料）<br>【TOMAS校舎開催】<a href="https://t.co/7GK7B9Fkmr">https://t.co/7GK7B9Fkmr</a><br>【Zoom開催】<a href="https://t.co/3iq5YQLaj1">https://t.co/3iq5YQLaj1</a><a href="https://twitter.com/hashtag/%E7%90%86%E7%A7%91%E5%AE%9F%E9%A8%93?src=hash&amp;ref_src=twsrc%5Etfw">#理科実験</a>… <a href="https://t.co/mhjHG5JAor">pic.twitter.com/mhjHG5JAor</a></p>&mdash; 【公式】リソー教育 広報室 (@risokyoiku) <a href="https://twitter.com/risokyoiku/status/1961274639726121325?ref_src=twsrc%5Etfw">August 29, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+ <div class="fade-in tweet-wrapper">
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="ja" dir="ltr">東大への挑戦は、<br>もう始まっている。<br><br>✍中学生～高１・高２生対象<br>【東大数学チャレンジテスト】<br>申込受付中！<br><br>👇詳細はこちら<a href="https://t.co/uAxLp9olFC">https://t.co/uAxLp9olFC</a><a href="https://twitter.com/hashtag/TOMAS?src=hash&amp;ref_src=twsrc%5Etfw">#TOMAS</a><a href="https://twitter.com/hashtag/%E6%9D%B1%E5%A4%A7%E6%95%B0%E5%AD%A6?src=hash&amp;ref_src=twsrc%5Etfw">#東大数学</a> <a href="https://t.co/V4JLwsF9Kq">pic.twitter.com/V4JLwsF9Kq</a></p>&mdash; 【公式】リソー教育 広報室 (@risokyoiku) <a href="https://twitter.com/risokyoiku/status/1947508556946866469?ref_src=twsrc%5Etfw">July 22, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>  
+    
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+
+
+  <a href="#" id="toTop" class="to-top">
+    <img src="../../../img/gototop.svg" alt="トップへ">
+  </a>
+
+  <footer>
+    <div class="footer-name">
+      TAKAYA AOKI
+    </div>
+
+    <div class="contact">
+      <span class="contact-text">contact</span>
+      <span class="contact-mail">taka.11leo0@gmail.com</span>
+    </div>
+
+    <div class="links">
+     <!-- <a href="works.html" class="link2second">Works</a>-->
+
+      <div class="link2third">
+        <a href="works/dtp/">DTPデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="works/web/">Webデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="works/banner/">バナーデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="works/other/">その他デザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+       <a href="works/illust/">イラスト制作</a>
+      </div>
+
+      <a href="about/" class="link2sec">About</a>
+    </div>
+
+    <div class="copyright">©2025 TAKAYA AOKI</div>
+
+  </footer>
+
+  <script src="../../../js/common.js"></script>
+</body>
+
+</html>
