@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>TAKAYA AOKI</title>
+  <link rel="icon" href="../../../img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/common.css">
+ <style>
+    main {
+
+      padding-top: 0;
+    }
+
+
+
+    .works-image4 {
+      padding-top: 120px;
+
+      width: auto;
+      /* 切り抜きたい枠の幅 */
+      margin-bottom: 2vw;
+
+    }
+
+    .works-image4 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1);
+      /* ← 数字を大きくすると拡大 */
+    }
+
+
+
+    @media screen and (min-width: 601px) {
+
+
+      .works-image4 {
+        margin: 0;
+
+        width: 100%;
+        /* 切り抜きたい枠の幅 */
+        height: auto;
+
+      }
+
+      .works-image4 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 10%;
+        /* 上下の開始位置を10%ずらす */
+
+        /* ← 数字を大きくすると拡大 */
+      }
+    }
+
+    .works-title {
+      margin-top: 2vw;
+      font-weight: 400;
+      font-size: 16px;
+      color: #3e3e3e;
+    }
+
+    .works-where {
+      font-weight: 300;
+      font-size: 14px;
+      color: #3e3e3e;
+    }
+
+    p {
+      font-size: 14px;
+      margin-top: 3vw;
+      color: #3e3e3e;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    @media screen and (min-width: 601px) {
+
+      .works-title {
+        margin-top: 3vw;
+        font-weight: 500;
+        font-size: 18px;
+        color: #3e3e3e;
+      }
+
+      .works-where {
+        font-weight: 300;
+        font-size: 16px;
+        color: #3e3e3e;
+      }
+
+      p {
+        font-size: 18px;
+        margin-top: 20px;
+        color: #3e3e3e;
+        font-weight: 400;
+        line-height: 28px;
+      }
+
+    }
+
+    .matrix {
+      margin-top: 10vw;
+      margin-bottom: 20vw;
+
+    }
+
+    /* 1列目 */
+    td:nth-child(1) {
+      font-weight: 300;
+      font-size: 16px;
+
+      color: #2c3f4d;
+
+
+    }
+
+    /* 2列目 */
+    td:nth-child(2) {
+      font-weight: 500;
+      font-size: 16px;
+      color: #3e3e3e;
+
+    }
+
+    @media screen and (min-width: 601px) {
+      .matrix {
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+        padding: 0 5vw
+      }
+
+      /* 1列目 */
+      td:nth-child(1) {
+        font-weight: 300;
+        font-size: 18px;
+        color: #2c3f4d;
+        width: 50%;
+
+      }
+
+      /* 2列目 */
+      td:nth-child(2) {
+        font-weight: 500;
+        font-size: 18px;
+        color: #3e3e3e;
+        width: 50%;
+      }
+    }
+
+
+
+    table {
+      border-collapse: collapse;
+      /* 線をスッキリまとめる */
+      text-align: center;
+        width: 100%;
+    }
+
+    td {
+      padding: 25px 30px;
+      /* セル内テキストと線の間に余白 */
+    }
+
+    table tr {
+      border-bottom: 0.5px solid #4A5C7A;
+    }
+
+    @media screen and (min-width: 601px) {
+      table {
+        border-collapse: collapse;
+        /* 線をスッキリまとめる */
+        text-align: center;
+        width: 100%;
+      }
+    td {
+      padding: 25px 30px;
+      /* セル内テキストと線の間に余白 */
+    }
+
+
+    }
+
+    .whole-view {
+      background-color: #d9d9d9;
+      padding: 20px 20px 40px;
+      text-align: center;
+
+    }
+
+    .whole-view img {
+      padding: 40px 0;
+      width: 80vw;
+    }
+
+    @media screen and (min-width: 601px) {
+    .whole-view img {
+      padding: 40px 0;
+      width: 50vw;
+    }
+    }
+
+.subtitle{
+
+ 
+        margin-top: 5vw;
+        font-weight: 500;
+        font-size: 18px;
+        color: #3e3e3e;
+      
+
+}
+
+ @media screen and (max-width: 600px) {
+       .subtitle{ margin-top: 6vw;
+       }
+
+ }
+
+  </style>
+</head>
+
+<body>
+
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+  </div>
+
+  <a href="https://leoleochankoh1109.github.io/takaya_aoki/" class="logo">
+    <img src="../../../img/logo.svg" alt="ロゴ">
+  </a>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- サイドメニュー -->
+ <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/">Home</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/dtp/">DTPデザイン</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/web/">Webデザイン</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/banner/">バナーデザイン</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/other/">その他デザイン</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/illust/">イラスト制作</a></li>
+      <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/about/">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- ページ本体 -->
+  <main>
+
+    <div class="fade-in">
+      <div class="works-image4">
+        <img src="../../../img/dtp11.jpg" alt="DTP作品">
+      </div>
+
+      <div class="works-title">製薬会社のアニュアルレポート　表紙・中面</div>
+      <div class="works-where">自主制作</div>
+    </div>
+
+    <div class="fade-in">
+      <div class="subtitle">概要</div>
+      <p>ある企業の採用に応募した際に課題として制作した、製薬会社のアニュアルレポートの表紙（2案）および中面デザインです。
+課題として提示されたテーマ「New Value Creation（新しい価値の創造）」をもとに、企業が自らの手で未来を描く姿勢を表現しています。
+制作期間は合わせて12時間程度。Adobe IllustratorとPhotoshopを使用し、印刷物としての完成度を意識したレイアウトを行いました。
+         </p>
+         </div>
+
+    <div class="fade-in">
+      <div class="subtitle">制作にあたって意識したこと</div>
+      <p>コーポレートコピー「New Value Creation」を、企業の理念や事業内容と一貫性をもって表現することを意識しました。
+ステークホルダーとしてまた、「患者」「研究者」「医療従事者」の3者を視覚的に示しながら、堅実さと成長性の両立を感じさせるデザインにしたいと考えました。
+企業広報誌として信頼性を保ちつつ、見る人にポジティブな印象を与えるビジュアル設計が課題でした。
+         </p>
+         </div>
+
+    <div class="fade-in">
+      <div class="subtitle">制作のコンセプト</div>
+      <p>「価値を創造する＝自らの手で描く」という発想から、“描く手元”をキービジュアルに設定。
+そこに「患者」「研究者」「医療従事者」の3者を象徴する写真を組み合わせ、企業の取り組みが多角的に展開していることを表現することにしました。
+表紙についてはスタンダードなデザインとして写真をメインにしたものと、それとは別角度からの案としてイラストを使用した案の2つを作成することに。
+中面については、写真の表紙案と同様のイメージでデザインすることにしました。
+        </p>
+         </div>
+
+
+    <div class="fade-in">
+      <div class="subtitle">デザインのポイント</div>
+      <p>写真をメインにした案では、三角形のモチーフを安定と発展の象徴として多用し、色や大きさの変化で多様な取り組みを暗示しました。
+イラスト案では、「描く手元」から連想した一筆書きの自作イラストを使用。
+「描く手元」「研究者」「患者」「医療従事者」に加え、薬のモチーフを取り入れることで、製薬企業らしい親しみと創造性を両立しています。
+中面デザインでは、社長インタビューのテーマ「これまでを踏まえ、今後をどうしていくか」に合わせ、“歩き出す姿”を象徴する写真を採用。
+誌面全体を通して青系のトーンを基調に、理知的で統一感のあるビジュアルにまとめています。
+        </p>
+         </div>
+
+    <div class="fade-in">
+      <div class="matrix">
+        <table>
+          <tr>
+            <td>制作時期</td>
+            <td>2025年4月</td>
+          </tr>
+
+          <tr>
+            <td>使用ツール</td>
+            <td>Adobe Illustrator<br>Adobe Photoshop</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+
+  <div class="whole-view">
+    <div class="fade-in">
+      <img src="edge01.jpg" alt="ポートフォリオpc">
+    </div>
+
+    <div class="fade-in">
+      <img src="edge02.jpg" alt="ポートフォリオpc">
+    </div>
+
+
+    <div class="fade-in">
+      <img src="edge03.jpg" alt="ポートフォリオpc">
+    </div>
+
+
+
+
+  </div>
+
+
+
+  <a href="#" id="toTop" class="to-top">
+    <img src="../../../img/gototop.svg" alt="トップへ">
+  </a>
+
+  <footer>
+    <div class="footer-name">
+      TAKAYA AOKI
+    </div>
+
+    <div class="contact">
+      <span class="contact-text">contact</span>
+      <span class="contact-mail">taka.11leo0@gmail.com</span>
+    </div>
+
+    <div class="links">
+     <!-- <a href="works.html" class="link2second">Works</a>-->
+
+      <div class="link2third">
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/dtp/">DTPデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/web/">Webデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/banner/">バナーデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/others/">その他デザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
+       <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/illust/">イラスト制作</a>
+      </div>
+
+      <a href="https://leoleochankoh1109.github.io/takaya_aoki/about/" class="link2sec">About</a>
+    </div>
+
+    <div class="copyright">©2025 TAKAYA AOKI</div>
+
+  </footer>
+
+  <script src="../../../js/common.js"></script>
+</body>
+
+</html>
