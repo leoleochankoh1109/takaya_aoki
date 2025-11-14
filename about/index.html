@@ -435,6 +435,42 @@
 
 
     }
+
+      .works-item3 {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        flex-direction: row-reverse;
+        /* 画像とテキストの間の余白 */
+
+      }
+
+     @media screen and (max-width:769px) {
+
+              .works-item3 {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        flex-direction:row;
+        /* 画像とテキストの間の余白 */
+
+      }
+
+     }
+
+    .caption-text {
+        font-size: 12px;
+      color: #3e3e3e;
+      font-weight: 300;
+      line-height: 20px;
+
+    }
+
+
   </style>
 </head>
 
@@ -703,10 +739,10 @@
     </div>
 
     <div class="fade-in">
-      <div class="works-item2">
+      <div class="works-item3">
         <div class="photocap">
         <img src="tapnovel.jpg" alt="タップノベル" class="works-image">
-          <p>第３回TapNovelゲーム小説大賞で大賞を受賞し、長編化もされた「サンタちゃんはなまけたい！」（シナリオ執筆、演出を担当）。</p>
+          <p class="caption-text">第３回TapNovelゲーム小説大賞で大賞を受賞し、長編化もされた「サンタちゃんはなまけたい！」（シナリオ執筆、演出を担当）。</p>
         </div>
         
         <div class="works-text">
