@@ -444,8 +444,19 @@
         gap: 8%;
         flex-direction: row-reverse;
         /* 画像とテキストの間の余白 */
-
+  justify-content: space-between;
       }
+
+.photocap,
+.works-text {
+  flex: 1;        /* 同じ比率で伸びる */
+  max-width: 50%; /* 無理に広がりすぎるのを防ぐ */
+}
+
+.works-text {
+  padding-left: 40px; /* 適度な余白（調整してOK） */
+}
+
 
      @media screen and (max-width:769px) {
 
