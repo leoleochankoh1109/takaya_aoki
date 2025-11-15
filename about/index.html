@@ -450,8 +450,16 @@
 .photocap,
 .works-text {
   flex: 1;        /* 同じ比率で伸びる */
+}
+
+
+     @media screen and (min-width:770px) {
+.photocap,
+.works-text {
+
   max-width: 50%; /* 無理に広がりすぎるのを防ぐ */
 }
+     }
 
 
      @media screen and (max-width:769px) {
@@ -467,6 +475,8 @@
 
       }
 
+
+      
      }
 
     .caption-text {
@@ -482,6 +492,7 @@
         max-width: 500px;
         height: auto;
       }
+
 .category-title{
 
     font-size: 20px;
