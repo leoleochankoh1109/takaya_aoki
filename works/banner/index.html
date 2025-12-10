@@ -13,58 +13,31 @@
     rel="stylesheet">
   <link rel="stylesheet" href="../../css/common.css">
   <style>
-    main {
-
-      padding-top: 0;
-    }
-
-
-
-    .works-image4 {
+    .title3 {
       padding-top: 120px;
 
-      width: auto;
-      /* 切り抜きたい枠の幅 */
-      margin-bottom: 2vw;
+      display: flex;
+      align-items: baseline;
+      text-align: left;
+      gap: 12px;
+      /* 英語と日本語の間の余白 */
+      color: #2c3f4d;
 
+      font-size: 24px;
+      font-weight: 700;
+      /* ボールド */
     }
 
-    .works-image4 img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transform: scale(1);
-      /* ← 数字を大きくすると拡大 */
-    }
-
-
-
-    @media screen and (min-width: 601px) {
-
-
-      .works-image4 {
-        margin: 0;
-
-        width: 100%;
-        /* 切り抜きたい枠の幅 */
-        height: auto;
-
-      }
-
-      .works-image4 img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center 10%;
-        /* 上下の開始位置を10%ずらす */
-
-        /* ← 数字を大きくすると拡大 */
-      }
+    hr {
+      border: none;
+      border-top: 1px solid #2c3f4d;
+      /* 横線の色と太さ */
+      margin: 10px 0;
+      /* 上下の余白 */
     }
 
     .works-title {
-      margin-top: 2vw;
+      margin-top: 10px;
       font-weight: 400;
       font-size: 16px;
       color: #3e3e3e;
@@ -76,140 +49,18 @@
       color: #3e3e3e;
     }
 
-    p {
-      font-size: 14px;
-      margin-top: 20px;
-      color: #3e3e3e;
-      font-weight: 400;
-      line-height: 24px;
+
+    main {
+
+      padding-top: 0;
     }
 
-    @media screen and (min-width: 601px) {
-
-      .works-title {
-        margin-top: 3vw;
-        font-weight: 500;
-        font-size: 18px;
-        color: #3e3e3e;
-      }
-
-      .works-where {
-        font-weight: 300;
-        font-size: 16px;
-        color: #3e3e3e;
-      }
-
-      p {
-        font-size: 18px;
-        margin-top: 5vw;
-        color: #3e3e3e;
-        font-weight: 400;
-        line-height: 28px;
-      }
-
-    }
-
-    .matrix {
-      margin-top: 10vw;
-      margin-bottom: 20vw;
-
-    }
-
-    /* 1列目 */
-    td:nth-child(1) {
-      font-weight: 300;
-      font-size: 16px;
-
-      color: #2c3f4d;
-
-
-    }
-
-    /* 2列目 */
-    td:nth-child(2) {
-      font-weight: 500;
-      font-size: 16px;
-      color: #3e3e3e;
-
-    }
-
-    @media screen and (min-width: 601px) {
-      .matrix {
-        margin-top: 10vw;
-        margin-bottom: 10vw;
-        padding: 0 5vw
-      }
-
-      /* 1列目 */
-      td:nth-child(1) {
-        font-weight: 300;
-        font-size: 18px;
-        color: #2c3f4d;
-        width: 50%;
-
-      }
-
-      /* 2列目 */
-      td:nth-child(2) {
-        font-weight: 500;
-        font-size: 18px;
-        color: #3e3e3e;
-        width: 50%;
-      }
-    }
-
-
-
-    table {
-      border-collapse: collapse;
-      /* 線をスッキリまとめる */
-      text-align: center;
+    @media screen and (min-width: 768px) {
+      img.works-image {
         width: 100%;
-    }
-
-    td {
-      padding: 25px 30px;
-      /* セル内テキストと線の間に余白 */
-    }
-
-    table tr {
-      border-bottom: 0.5px solid #4A5C7A;
-    }
-
-    @media screen and (min-width: 601px) {
-      table {
-        border-collapse: collapse;
-        /* 線をスッキリまとめる */
-        text-align: center;
-        width: 100%;
+        margin-top: 50px;
       }
-    td {
-      padding: 25px 30px;
-      /* セル内テキストと線の間に余白 */
     }
-
-
-    }
-
-    .whole-view {
-      background-color: #d9d9d9;
-      padding: 20px 20px 40px;
-      text-align: center;
-
-    }
-
-    .whole-view img {
-      padding: 40px 0;
-      width: 80vw;
-    }
-
-    @media screen and (min-width: 601px) {
-    .whole-view img {
-      padding: 40px 0;
-      width: 50vw;
-    }
-    }
-
   </style>
 </head>
 
@@ -228,7 +79,7 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- サイドメニュー -->
- <nav class="side-menu" id="sideMenu">
+  <nav class="side-menu" id="sideMenu">
     <ul>
       <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/">Home</a></li>
       <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/dtp/">DTPデザイン</a></li>
@@ -242,140 +93,29 @@
 
   <!-- ページ本体 -->
   <main>
+    <div class="title3">Webデザイン</div>
+    <hr>
 
-    <div class="fade-in">
-      <div class="works-image4">
-        <img src="../../img/banner.jpg" alt="DTP作品">
+    <div class="works-grid">
+      <div class="works-wrapper fade-in">
+        <a href="website/" style="display:block; text-decoration:none; color:inherit;">
+          <img src="../../img/banner_web.jpg" alt="Webデザイン" class="works-image">
+          <div class="works-title">Webサイト用のバナー画像</div>
+          <div class="works-where">現職</div>
+        </a>
       </div>
 
-      <div class="works-title">SNS・Webサイト用のバナー画像</div>
-      <div class="works-where">現職</div>
-    </div>
-
-    <div class="fade-in">
-      <p> 自社Webサイトや、イベントなどを宣伝するXで使用したバナー画像。Xでは、画像と合わせてポスト内容のライティングも行っています。それぞれテーマやトンマナが異なるため、それらに即したバナーになるよう心がけました。また、Xのバナーでは、あまり詳細は記載せず（ポストやリンク先ページに記載があるため）、アイキャッチとして作成しました。    </div>
-
-    <div class="fade-in">
-      <div class="matrix">
-        <table>
-          <tr>
-            <td>制作時期</td>
-            <td>2024年1月～2025年10月</td>
-          </tr>
-
-          <tr>
-            <td>使用ツール</td>
-            <td>Adobe Illustrator<br>Adobe Photoshop</td>
-          </tr>
-        </table>
+      <div class="works-wrapper fade-in">
+        <a href="twitter/" style="display:block; text-decoration:none; color:inherit;">
+          <img src="../../img/banner.jpg" alt="DTP作品" class="works-image">
+          <div class="works-title">X(旧Twitter)用のバナー画像</div>
+          <div class="works-where">現職</div>
+        </a>
       </div>
     </div>
+
 
   </main>
-
-
-  <div class="whole-view">
-
-    <div class="fade-in">
-      <img src="degilig01.jpg" alt="ポートフォリオpc">
-    </div>
-
-    <div class="fade-in">
-      <img src="specinfo.jpg" alt="ポートフォリオpc">
-    </div>
-    <div class="fade-in">
-      <img src="specinfo_sp.jpg" alt="ポートフォリオpc">
-    </div>
-    <div class="fade-in">
-      <img src="plus1.jpg" alt="ポートフォリオpc">
-    </div>
-
-    <div class="fade-in">
-      <img src="mv02pc.jpg" alt="ポートフォリオpc">
-    </div>
-    <div class="fade-in">
-      <img src="mv02sp.jpg" alt="ポートフォリオpc">
-    </div>
-    <div class="fade-in">
-      <img src="specinterpc.jpg" alt="ポートフォリオpc">
-    </div>
-    <div class="fade-in">
-      <img src="specintersp.jpg" alt="ポートフォリオpc">
-    </div>
-    <div class="fade-in">
-      <img src="spec0831pc.jpg" alt="ポートフォリオpc">
-    </div>
-    <div class="fade-in">
-      <img src="spec0831sp.jpg" alt="ポートフォリオpc">
-    </div>
-
-
-    <div class="fade-in">
-      <img src="prewinter.jpg" alt="ポートフォリオpc">
-    </div>
-
-    <div class="fade-in">
-      <img src="kagakukiso.jpg" alt="ポートフォリオpc">
-    </div>
-
-    <div class="fade-in">
-      <img src="meficbun.jpg" alt="ポートフォリオpc">
-    </div>
-
-    <div class="fade-in">
-      <img src="sainankan5.jpg" alt="ポートフォリオpc">
-    </div>
-    
-    
-    <div class="fade-in">
-      <img src="ｍcamp25.jpg" alt="ポートフォリオpc">
-    </div>
-    
-    <div class="fade-in">
-      <img src="mathg.jpg" alt="ポートフォリオpc">
-    </div>
-    
-    <div class="fade-in">
-      <img src="science.jpg" alt="ポートフォリオpc">
-    </div>
-    
-    <div class="fade-in">
-      <img src="tokkunmoshi.jpg" alt="ポートフォリオpc">
-    </div>
-        <div class="fade-in">
-      <img src="sainankans34.jpg" alt="ポートフォリオpc">
-    </div>
-        <div class="fade-in">
-      <img src="specsd.jpg" alt="ポートフォリオpc">
-    </div>
-        <div class="fade-in">
-      <img src="proclo1.png" alt="ポートフォリオpc">
-    </div>
-    
-
-
-    <div class="fade-in">
-      <img src="winter.jpg" alt="ポートフォリオpc">
-    </div>
-    
-    <div class="fade-in">
-      <img src="summer.jpg" alt="ポートフォリオpc">
-    </div>
-    
-    <div class="fade-in">
-      <img src="start.jpg" alt="ポートフォリオpc">
-    </div>
-
-
-        <div class="fade-in">
-      <img src="interview.jpg" alt="ポートフォリオpc">
-    </div>
-    
-
-
-  </div>
-
-
 
   <a href="#" id="toTop" class="to-top">
     <img src="../../img/gototop.svg" alt="トップへ">
