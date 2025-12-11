@@ -144,4 +144,17 @@ window.addEventListener("load", () => {
 
 });
 
+const menuItems = [
+  { label: "Home", url: "https://leoleochankoh1109.github.io/takaya_aoki/" },
+  { label: "DTPデザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/dtp/" },
+  { label: "Webデザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/web/" },
+  { label: "バナーデザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/banner/" },
+  { label: "その他デザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/others/" },
+  { label: "About", url: "https://leoleochankoh1109.github.io/takaya_aoki/about/" }
+];
 
+const menuList = document.getElementById("menuList");
+
+menuList.innerHTML = menuItems
+  .map(item => `<li><a href="${item.url}">${item.label}</a></li>`)
+  .join('');
