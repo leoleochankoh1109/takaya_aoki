@@ -150,7 +150,7 @@ const menuItems = [
   { label: "Webデザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/web/" },
   { label: "バナーデザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/banner/" },
   { label: "その他デザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/others/" },
-  { label: "About", url: "https://leoleochankoh1109.github.io/takaya_aoki/about/" }
+
 ];
 
 const menuList = document.getElementById("menuList");
