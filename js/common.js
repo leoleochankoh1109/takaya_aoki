@@ -150,7 +150,7 @@ const menuItems = [
   { label: "Webデザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/web/" },
   { label: "バナーデザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/banner/" },
   { label: "その他デザイン", url: "https://leoleochankoh1109.github.io/takaya_aoki/works/others/" },
-
+  { label: "About", url: "https://leoleochankoh1109.github.io/takaya_aoki/about/" }
 ];
 
 const menuList = document.getElementById("menuList");
@@ -158,3 +158,15 @@ const menuList = document.getElementById("menuList");
 menuList.innerHTML = menuItems
   .map(item => `<li><a href="${item.url}">${item.label}</a></li>`)
   .join('');
+
+
+const footerLinks = document.querySelector(".link2third");
+
+const excluded = ["home", "about"]; // ← ここ
+
+const filteredItems = menuItems.filter(item => !excluded.includes(item.key));
+
+footerLinks.innerHTML = filteredItems
+  .map(item => `<a href="${item.url}">${item.label}</a>／`)
+  .join("")
+  .replace(/／$/, ""); // 最後のスラッシュを削除
