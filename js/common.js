@@ -167,6 +167,8 @@ const excluded = ["Home", "About"]; // ← ここ
 const filteredItems = menuItems.filter(item => !excluded.includes(item.label));
 
 footerLinks.innerHTML = filteredItems
-  .map(item => `<a href="${item.url}">${item.label}</a>/<wbr>`)
-  .join("")
-  .replace(/\/<wbr>$/, ""); // ← これでちゃんと消える
+  .map((item, index) => {
+    const isLast = index === filteredItems.length - 1;
+    return `<a href="${item.url}">${item.label}</a>${isLast ? "" : "/<wbr>"}`;
+  })
+  .join("");
