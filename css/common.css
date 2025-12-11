@@ -896,7 +896,7 @@
     .link2third {
       margin: 0 0 10px;
       font-size: 14px;
-      white-space: nowrap;
+      white-space: normal;
       line-height: 2
     }
 
@@ -978,4 +978,5 @@
         display: inline;
         /* スマホサイズでだけ表示 */
       }
+
     }

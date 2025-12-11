@@ -167,11 +167,6 @@ const excluded = ["Home", "About"]; // ← ここ
 const filteredItems = menuItems.filter(item => !excluded.includes(item.label));
 
 footerLinks.innerHTML = filteredItems
-  .map(item => `<a href="${item.url}">${item.label}</a>／`)
+  .map(item => `<a href="${item.url}">${item.label}</a>/<wbr>`)
   .join("")
-  .replace(/／$/, ""); // 最後のスラッシュを削除
-
-  footerLinks.innerHTML = filteredItems
-  .map(item => `<a href="${item.url}">${item.label}</a>／<wbr>`)
-  .join("")
-  .replace(/\/<wbr>$/, ""); // 最後のスラッシュは削除
+  .replace(/\/<wbr>$/, ""); // ← これでちゃんと消える
