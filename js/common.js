@@ -164,7 +164,7 @@ const footerLinks = document.querySelector(".link2third");
 
 const excluded = ["Home", "About"]; // ← ここ
 
-const filteredItems = menuItems.filter(item => !excluded.includes(item.key));
+const filteredItems = menuItems.filter(item => !excluded.includes(item.label));
 
 footerLinks.innerHTML = filteredItems
   .map(item => `<a href="${item.url}">${item.label}</a>／`)
