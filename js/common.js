@@ -162,7 +162,7 @@ menuList.innerHTML = menuItems
 
 const footerLinks = document.querySelector(".link2third");
 
-const excluded = ["home", "about"]; // ← ここ
+const excluded = ["Home", "About"]; // ← ここ
 
 const filteredItems = menuItems.filter(item => !excluded.includes(item.key));
 
