@@ -19,11 +19,9 @@
 
 <body>
   <!-- ローディングアニメ -->
-  <div id="loading">
-  <video autoplay muted playsinline loop>
-    <source src="img/load.mp4" type="video/mp4">
-  </video>
-  </div>
+<div id="loading">
+  <img src="img/logo.svg" alt="Loading" class="loading-svg">
+</div>
 
 
   <div class="hamburger" id="hamburger">
@@ -80,20 +78,29 @@
 
   <!-- ページ本体 -->
   <main>
+
+    <div class="selected-banner fade-in">
+  <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/selected/">
+    <img src="img/selected.jpg" alt="Selected Works">
+  </a>
+</div>
+
+
     <div class="title">
       <span class="title-en">Works</span>
       <span class="title-ja">制作物</span>
     </div>
 
     <div class="fade-in">
-      <div class="works-item">
+      <a href="works/dtp/" class="more-link"><div class="works-item">
         <img src="img/illust05.jpg" alt="DTP作品" class="works-image">
         <div class="works-text">
           <div class="category-title">DTPデザイン</div>
           <p class="category-text">チラシ・ポスター類の制作実績をご紹介します。ぱっと見での訴求力と、最後まで内容を読ませるための整理、全体的な統一感を大切にして制作しています。
             <br>
-            <a href="works/dtp/" class="more-link">詳しくみる→</a>
+            詳しくみる→
           </p>
+          </a>
         </div>
       </div>
     </div>
@@ -201,7 +208,7 @@
 
     <div class="links">
      <!-- <a href="works.html" class="link2second">Works</a>-->
-      <a href="/" class="link2sec">Home</a>
+      <a href="https://leoleochankoh1109.github.io/takaya_aoki/" class="link2sec">Home</a>
       <div class="link2third" id="footerLinks">
 
 
@@ -213,7 +220,7 @@
      <a href="works/degilig/">デジLIG講座</a> -->
       </div>
 
-      <a href="about/" class="link2sec">About</a>
+      <a href="https://leoleochankoh1109.github.io/takaya_aoki/about/" class="link2sec">About</a>
     </div>
 
     <div class="copyright">©2025 TAKAYA AOKI</div>
