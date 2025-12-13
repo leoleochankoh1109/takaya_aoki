@@ -6,9 +6,14 @@
     }
 
 .selected-banner {
-  width: 1000px; /* 好きなサイズで */
-  height: auto;
+  width: 100%;
+  margin-bottom: 80px;
+}
 
+.selected-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .loading-svg {
