@@ -6,21 +6,32 @@
     }
 
 .loading-svg {
-  width: 120px; /* 好きなサイズで */
+  width: 480px; /* 好きなサイズで */
   height: auto;
   opacity: 0;
   animation: fadeIn 1.2s ease forwards;
 }
 
+    @media screen and (max-width: 600px) {
+
+.loading-svg {
+  width: 240px; /* 好きなサイズで */
+  height: auto;
+
+}
+
+
+    }
+
 /* ふわっと表示 */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+
   }
 }
 
