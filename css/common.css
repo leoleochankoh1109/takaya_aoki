@@ -7,7 +7,6 @@
 
 .selected-banner {
   width: 100%;
-  margin-bottom: 80px;
 }
 
 .selected-banner img {
@@ -652,9 +651,7 @@
         align-self: flex-end;
       }
 
-      .more-link2 {
-  text-decoration: none;
-      }
+
 
 
     }
@@ -678,7 +675,7 @@
         color: #3e3e3e;
         font-weight: 400;
         line-height: 24px;
-
+  display: block;
       }
     }
 
@@ -699,6 +696,10 @@
       text-decoration: none;
       /* ホバー時は下線消す */
     }
+
+      .more-link2 {
+  text-decoration: none;
+      }
 
     .about-image {
       width: 200px;
