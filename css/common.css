@@ -652,6 +652,9 @@
         align-self: flex-end;
       }
 
+      .more-link2 {
+  text-decoration: none;
+      }
 
 
     }
