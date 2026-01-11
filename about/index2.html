@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -184,22 +182,23 @@
       display: none;
     }
 
-.timeline-image-wrap {
-  text-align: center;
-  margin-bottom: 16px;
-}
-.timeline-image-wrap img {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 0 auto;
-}
+    .timeline-image-wrap {
+      text-align: center;
+      margin-bottom: 16px;
+    }
 
-.timeline-caption {
-  font-size: 10px;
-  color: #555;
-  margin-top: 6px;
-}
+    .timeline-image-wrap img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .timeline-caption {
+      font-size: 10px;
+      color: #555;
+      margin-top: 6px;
+    }
 
     /* スキル全体のレイアウト */
     .skills-grid {
@@ -319,16 +318,17 @@
 
     @media screen and (min-width: 769px) {
 
-    img.strong-image {
-      width: 45%;
+      img.strong-image {
+        width: 45%;
+      }
+
     }
 
-  }
     @media screen and (min-width: 1024px) {
 
-    img.strong-image {
-      width: 40%;
-    }
+      img.strong-image {
+        width: 40%;
+      }
 
     }
 
@@ -454,100 +454,103 @@
 
     }
 
+    .works-item3 {
+      margin-bottom: 15%;
+      display: flex;
+      align-items: flex-start;
+      /* 上揃えにしたい場合 */
+      gap: 8%;
+      flex-direction: row-reverse;
+      /* 画像とテキストの間の余白 */
+      justify-content: space-between;
+    }
+
+    .photocap,
+    .works-text {
+      flex: 1;
+      /* 同じ比率で伸びる */
+    }
+
+
+    @media screen and (min-width:770px) {
+
+      .photocap,
+      .works-text {
+
+        max-width: 50%;
+        /* 無理に広がりすぎるのを防ぐ */
+      }
+    }
+
+
+    @media screen and (max-width:769px) {
+
       .works-item3 {
         margin-bottom: 15%;
         display: flex;
         align-items: flex-start;
         /* 上揃えにしたい場合 */
         gap: 8%;
-        flex-direction: row-reverse;
-        /* 画像とテキストの間の余白 */
-  justify-content: space-between;
-      }
-
-.photocap,
-.works-text {
-  flex: 1;        /* 同じ比率で伸びる */
-}
-
-
-     @media screen and (min-width:770px) {
-.photocap,
-.works-text {
-
-  max-width: 50%; /* 無理に広がりすぎるのを防ぐ */
-}
-     }
-
-
-     @media screen and (max-width:769px) {
-
-              .works-item3 {
-        margin-bottom: 15%;
-        display: flex;
-        align-items: flex-start;
-        /* 上揃えにしたい場合 */
-        gap: 8%;
-        flex-direction:row;
+        flex-direction: row;
         /* 画像とテキストの間の余白 */
 
       }
 
 
-      
-     }
+
+    }
 
     .caption-text {
-        font-size: 12px;
+      font-size: 12px;
       color: #3e3e3e;
       font-weight: 300;
       line-height: 20px;
 
     }
 
-     img.works-image {
+    img.works-image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    .category-title {
+
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 769px) {
+
+      .works-text {
+        order: 1;
+      }
+
+      .photocap {
+        order: 2;
+      }
+
+      .works-item3 {
+        flex-direction: column;
+      }
+
+      /* 画像とテキストの幅調整 */
+      .photocap,
+      .works-text {
         width: 100%;
-        max-width: 500px;
+      }
+
+      .works-image {
+        width: 100%;
         height: auto;
       }
 
-.category-title{
-
-    font-size: 20px;
-}
-      @media screen and (max-width: 769px) {
-
-  .works-text {
-    order: 1;
-  }
-
-  .photocap {
-    order: 2;
-  }
-
-  .works-item3 {
-    flex-direction: column;
-  }
-
-  /* 画像とテキストの幅調整 */
-  .photocap,
-  .works-text {
-    width: 100%;
-  }
-
-  .works-image {
-    width: 100%;
-    height: auto;
-  }
 
 
-  
-  .categroy-text{
+      .categroy-text {
 
-    margin-top: 0px;
-  
-}
+        margin-top: 0px;
 
+      }
   </style>
 </head>
 
@@ -573,7 +576,7 @@
       <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/web/">Webデザイン</a></li>
       <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/banner/">バナーデザイン</a></li>
       <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/others/">その他デザイン</a></li>
-  <!--    <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/illust/">イラスト制作</a></li>-->
+      <!--    <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/works/illust/">イラスト制作</a></li>-->
       <li><a href="https://leoleochankoh1109.github.io/takaya_aoki/about/">About</a></li>
     </ul>
   </nav>
@@ -627,24 +630,23 @@
             <div class="fade-in">
               <h3>2011年4月～2015年3月</h3>
               <div class="timeline-title">筑波大学生命環境学群地球学類</div>
-              <p>生き物や自然環境についての勉強が好きだったため、地理学・地学の基礎的な分野を学ぶ生命環境学群地球学類に、1年間の浪人を経て入学。<br><br>自然地理学の一分野である「水文学（地球上の水循環を研究する分野）」を専攻し、その中でも森林の水循環を研究する森林水文学を専攻。強度間伐（※1）されたヒノキ林の吸水深度（※2）の変化を調べるという、土砂災害などの予防に繋がる卒業研究を行いました。<br><br>
+              <p>
+                生き物や自然環境についての勉強が好きだったため、地理学・地学の基礎的な分野を学ぶ生命環境学群地球学類に、1年間の浪人を経て入学。<br><br>自然地理学の一分野である「水文学（地球上の水循環を研究する分野）」を専攻し、その中でも森林の水循環を研究する森林水文学を専攻。強度間伐（※1）されたヒノキ林の吸水深度（※2）の変化を調べるという、土砂災害などの予防に繋がる卒業研究を行いました。<br><br>
                 ※1 強度間伐・・・通常よりも多くの割合を伐採すること。私の卒業研究のフィールドであった栃木県唐沢山の場合、約50％だった。<br>
                 ※2 吸水深度・・・主に植物（樹木）が土壌のどの深さから水を吸収しているかを示す指標。</p>
 
- <div class="timeline-image-wrap">
+              <div class="timeline-image-wrap">
                 <img src="forest.jpg" alt="ヒノキ林" class="timeline-image">
-      <p class="timeline-caption">研究対象だったヒノキ林（イメージ）。</p>
+                <p class="timeline-caption">研究対象だったヒノキ林（イメージ）。</p>
 
-</div>
-<p>在学中はアカペラサークルに所属。代表（部長のような役職）も経験し、多くの人と協力しながら組織の運営や、インカレ大会への挑戦などを経験しました。</p>
- <div class="timeline-image-wrap">
+              </div>
+              <p>在学中はアカペラサークルに所属。代表（部長のような役職）も経験し、多くの人と協力しながら組織の運営や、インカレ大会への挑戦などを経験しました。</p>
+              <div class="timeline-image-wrap">
                 <img src="acappella.jpg" alt="アカペラ" class="timeline-image">
-      <p class="timeline-caption">アカペラサークルでの活動の様子（向かって右端が青木）。</p>
-      </div>
+                <p class="timeline-caption">アカペラサークルでの活動の様子（向かって右端が青木）。</p>
+              </div>
 
-                <p>大学での専門分野は面白いものだと思いつつ、就職活動では、通常私の学部の卒業生がエントリーする土木・環境系の企業や公務員などだけでなく、幅広い企業にエントリー。その中で、ソフトウェアのマニュアル制作を行う<b>株式会社日立テクニカルコミュニケーションズ</b>への入社を決めました。<br><br>ソフトウェアの内容や使い方というやや難解な内容を、わかりやすく伝えるというミッションが、これまで理科系の内容を勉強してきた自分の経験にマッチすると考えたからです。
 
-              </p>
             </div>
           </div>
         </div>
@@ -655,21 +657,27 @@
             <div class="fade-in">
               <h3>2015年4月～2018年9月</h3>
               <div class="timeline-title">株式会社日立テクニカルコミュニケーションズ</div>
-              <p>2年間はソフトウェアのマニュアル制作のライター（テクニカルライター）の業務に従事しました。文章表現や、人に何かを伝える際の心構え、IT系の基礎知識など、現在の仕事にも繋がる社会人としての基礎的な部分はここで身につけました。<br><br>
-
- <div class="timeline-image-wrap">
+              <p>
+                大学での専門分野は面白いものだと思いつつ、就職活動では、通常私の学部の卒業生がエントリーする土木・環境系の企業や公務員などだけでなく、幅広い企業にエントリー。その中で、ソフトウェアのマニュアル制作を行う<b>株式会社日立テクニカルコミュニケーションズ</b>への入社を決めました。
+                <br><br>ソフトウェアの内容や使い方というやや難解な内容を、わかりやすく伝えるというミッションが、これまで理科系の内容を勉強してきた自分の経験にマッチすると考えたからです。
+                <br><br>
+                2年間はソフトウェアのマニュアル制作のライター（テクニカルライター）の業務に従事しました。文章表現や、人に何かを伝える際の心構え、IT系の基礎知識など、現在の仕事にも繋がる社会人としての基礎的な部分はここで身につけました。<br><br>
+              </p>
+              <div class="timeline-image-wrap">
                 <img src="manual.jpg" alt="マニュアル" class="timeline-image">
-      <p class="timeline-caption">制作していた、「JP1／AJS3」のマニュアル。</p>
-      </div>
+                <p class="timeline-caption">制作していた、「JP1／AJS3」のマニュアル。</p>
+              </div>
 
-                2017年4月よりデザイン関連部署に異動し、親会社である日立製作所のセキュリティ製品のプロモーションの企画・制作に従事しました。
-                
-                
-                日立テクニカルコミュニケーションズには元々、マニュアル制作だけでなく広告物・販促物・プロダクトなどの制作を行う部署もありました、会社として後者により比重を置くという方針転換があり、マニュアル制作担当部署から一部の人員をデザイン関連部署に異動させることになりました。その一環として、私にも声がかかりました。                
-                
-                
-                チラシや展示パネル・セミナー資料のデザイナー業務も担当し、より複雑なデザインを学びました。
-                <br><br>ポータルサイトの立ち上げでは社内情報共有webの運営にも関わり、webディレクション・ライティング・HTML・CSS の基本を習得しています。
+              2017年4月よりデザイン関連部署に異動し、親会社である日立製作所のセキュリティ製品のプロモーションの企画・制作に従事しました。
+              <br><br>
+              ここで初めて広告物・販促物・webサイトのディレクター・デザイナー・ライターとしての業務に携わり、
+
+
+              日立テクニカルコミュニケーションズには元々、マニュアル制作だけでなく広告物・販促物・プロダクトなどの制作を行う部署もありました、会社として後者により比重を置くという方針転換があり、マニュアル制作担当部署から一部の人員をデザイン関連部署に異動させることになりました。その一環として、私にも声がかかりました。
+
+
+
+              <br><br>ポータルサイトの立ち上げでは社内情報共有webの運営にも関わり、webディレクション・ライティング・HTML・CSS の基本を習得しています。
               </p>
             </div>
           </div>
@@ -746,7 +754,7 @@
         <div class="skill-time">使用期間：約3年</div>
         <p class="skill-text">バナー画像作成や写真の加工・レタッチに使用。
         </p>
- 
+
       </div>
 
       <div class="skill-item fade-in">
@@ -755,7 +763,7 @@
         <div class="skill-time">使用期間：約3年</div>
         <p class="skill-text">自社ホームページ・ポートフォリオサイトの作成などに使用。
         </p>
- 
+
       </div>
 
 
@@ -765,7 +773,7 @@
         <div class="skill-time">使用期間：約2年</div>
         <p class="skill-text">ワイヤーフレームやWebデザイン制作に使用。アニメーションなども作成しています。
         </p>
- 
+
       </div>
 
       <div class="skill-item fade-in">
@@ -784,7 +792,7 @@
         <p class="skill-text">動画コンテンツの制作や、Webサイト用のアニメーションGIF作成に使用。
         </p>
       </div>
-     <div class="skill-item fade-in">
+      <div class="skill-item fade-in">
         <img src="../img/skills-08.png" alt="camera" class="skill-image">
         <div class="skill-title">一眼レフカメラでの撮影／撮影ディレクション</div>
         <div class="skill-time">経験期間：約3年</div>
@@ -800,7 +808,7 @@
         <p class="skill-text">チラシやスライド資料の制作などに使用。 <br>
         </p>
 
-        
+
 
 
       </div>
@@ -872,19 +880,20 @@
     <div class="fade-in">
       <div class="works-item3">
         <div class="photocap">
-        <img src="tapnovel.jpg" alt="タップノベル" class="works-image">
+          <img src="tapnovel.jpg" alt="タップノベル" class="works-image">
           <p class="caption-text">第３回TapNovelゲーム小説大賞で大賞を受賞し、長編化もされた「サンタちゃんはなまけたい！」（シナリオ執筆、演出を担当）。</p>
         </div>
-        
+
         <div class="works-text">
           <div class="category-title">小説・シナリオの執筆</div>
-          <p class="category-text">2017年ごろから趣味で小説・シナリオを執筆しています。魅力的なキャラクター同士の掛け合いによるコメディストーリーを得意としており、2022年にはTapNovelにて賞を受賞、長編シナリオの商業執筆も経験しました。
-                    <br>
-            <a href="https://tapnovel.com/writers/1140" class="more-link" target="_blank">Tapnovel投稿作品をみる（外部サイト）</a>  
-                    <br>
-            <a href="https://tapnovel.com/writers/14927" class="more-link" target="_blank">Tapnovel公式作品をみる（外部サイト）</a>  
+          <p class="category-text">
+            2017年ごろから趣味で小説・シナリオを執筆しています。魅力的なキャラクター同士の掛け合いによるコメディストーリーを得意としており、2022年にはTapNovelにて賞を受賞、長編シナリオの商業執筆も経験しました。
+            <br>
+            <a href="https://tapnovel.com/writers/1140" class="more-link" target="_blank">Tapnovel投稿作品をみる（外部サイト）</a>
+            <br>
+            <a href="https://tapnovel.com/writers/14927" class="more-link" target="_blank">Tapnovel公式作品をみる（外部サイト）</a>
 
-        </p>
+          </p>
 
 
         </div>
@@ -914,14 +923,18 @@
     </div>
 
     <div class="links">
-     <!-- <a href="works.html" class="link2second">Works</a>-->
+      <!-- <a href="works.html" class="link2second">Works</a>-->
 
       <div class="link2third">
-        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/dtp/">DTPデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
-        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/web/">Webデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
-        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/banner/">バナーデザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
-        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/others/">その他デザイン</a><span class="sp-br"><br></span><span class="pc-slash">／</span>
-    <!--   <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/illust/">イラスト制作</a> -->
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/dtp/">DTPデザイン</a><span
+          class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/web/">Webデザイン</a><span
+          class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/banner/">バナーデザイン</a><span
+          class="sp-br"><br></span><span class="pc-slash">／</span>
+        <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/others/">その他デザイン</a><span
+          class="sp-br"><br></span><span class="pc-slash">／</span>
+        <!--   <a href="https://leoleochankoh1109.github.io/takaya_aoki/works/illust/">イラスト制作</a> -->
       </div>
 
       <a href="https://leoleochankoh1109.github.io/takaya_aoki/about/" class="link2sec">About</a>
