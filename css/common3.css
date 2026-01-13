@@ -1,0 +1,1035 @@
+    /* リセット */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+.selected-banner {
+  width: 100%;
+}
+
+.selected-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.loading-svg {
+  width: 480px; /* 好きなサイズで */
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+    @media screen and (max-width: 600px) {
+
+.loading-svg {
+  width: 240px; /* 好きなサイズで */
+  height: auto;
+
+}
+
+
+    }
+
+/* ふわっと表示 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+
+  }
+}
+
+    body {
+      background: none;
+        margin-top: 100vh;
+    }
+
+    nav {
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+
+    }
+
+    main {
+      padding-top: 70%;
+      /* MVぶんだけ下げる */
+      padding-left: 15%;
+
+      padding-right: 15%;
+      font-weight: 500;
+      min-height: 100vh;
+      padding-bottom: 50px;
+      /* ボタン下の余白分を追加 */
+      height: auto;
+      /* まず WebP を優先して指定（対応ブラウザで使われる） */
+      background-image: image-set("../img/noise.webp" type("image/webp") 1x,
+          "../img/noise.png" type("image/png") 1x);
+      /* 古いブラウザや image-set 非対応向けの追加指定（安全網） */
+      /* background-image: url('images/noise.png'); */
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      /* 例：元画像が256pxなら4分の1のサイズで敷き詰め */
+      background-position: 0 0;
+      background-attachment: scroll;
+      /* 固定したければ 'fixed' に変更 */
+
+
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Meiryo", "MS PGothic", sans-serif;
+
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 1024px) {
+      main {
+
+        padding-left: 10%;
+
+        padding-right: 10%;
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      main {
+        padding-top: 200%;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-weight: 500;
+        min-height: 100vh;
+        padding-bottom: 50px;
+      }
+    }
+
+    .about-main {
+
+      /* MVぶんだけ下げる */
+      padding-left: 15%;
+
+      padding-right: 15%;
+      font-weight: 500;
+      min-height: 100vh;
+      padding-bottom: 50px;
+      /* ボタン下の余白分を追加 */
+      height: auto;
+      /* まず WebP を優先して指定（対応ブラウザで使われる） */
+      background: url("../img/about-back.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      /* 画面いっぱいに拡大・縮小 */
+      /* 固定したければ 'fixed' に変更 */
+
+
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    }
+
+
+
+
+    @media screen and (min-width: 601px) and (max-width: 1024px) {
+      .about-main {
+
+        padding-left: 10%;
+
+        padding-right: 10%;
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      .about-main {
+        background: url("../img/about-back_sp.jpg") no-repeat center center fixed;
+        background-size: cover;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-weight: 500;
+        min-height: 100vh;
+        padding-bottom: 50px;
+      }
+    }
+
+
+    /* ローディング画面 */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 2.0s ease, visibility 2.0s ease;
+    }
+
+    #loading.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #loading video {
+      width: 30%;
+      /* 画像サイズは調整OK */
+      height: auto;
+    }
+
+    @media screen and (max-width:600px) {
+      #loading video {
+        width: 50%;
+        /* 画像サイズは調整OK */
+        height: auto;
+      }
+    }
+
+
+
+    .logo {
+      position: absolute;
+      /* 画面の絶対位置 */
+      top: 20px;
+      /* 上から20px */
+      left: 20px;
+      /* 左から20px */
+      z-index: 2000;
+      /* MVより前面に */
+    }
+
+    .logo img {
+      width: 135px;
+      /* 必要に応じてサイズ調整 */
+      height: auto;
+    }
+
+
+    /* ハンバーガーボタン */
+    .hamburger {
+      position: fixed;
+      top: 35px;
+      right: 40px;
+      width: 30px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 9902;
+      gap: 7px;
+    }
+
+    /* 線のスタイル */
+    .hamburger span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+
+    }
+
+    .hamburger.active span {
+      background: #fff;
+      z-index: 9901;
+    }
+
+    /* アニメーションでバッテンに変化 */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(1px, 1px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* オーバーレイ */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(41, 46, 50, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1001;
+      transform: translateX(-100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      transform: translateX(0);
+
+    }
+
+
+    /* サイドメニュー */
+    .side-menu {
+      position: fixed;
+      color: #fff;
+      font-size: 18px;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      padding-top: 20px;
+      transition: left 0.3s ease;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .side-menu li {
+      margin-left: 50px;
+      padding-top: 30px;
+      cursor: pointer;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .side-menu a {
+      text-decoration: none;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    @media screen and (min-width:769px) {
+
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(41, 46, 50, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1001;
+        transform: translateX(200%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        text-align: right;
+      }
+
+      .overlay.active {
+        opacity: 1;
+        transform: translateX(0%);
+        text-align: right;
+      }
+
+      .side-menu {
+        position: fixed;
+        color: #fff;
+        font-size: 20px;
+        left: auto;
+        top: 0;
+        right: -400px;
+        width: auto;
+        height: 100%;
+        padding-top: 50px;
+        transition: right 0.3s ease;
+        z-index: 9900;
+        text-align: right;
+      }
+
+      .side-menu.open {
+        text-align: right;
+        right: 0;
+      }
+
+      .side-menu li {
+        text-align: right;
+        margin-left: 0;
+        margin-right: 80px;
+        padding-top: 30px;
+        cursor: pointer;
+      }
+
+    }
+
+    /* メインビジュアル */
+    .main-visual {
+/*       position: relative;
+      width: 100%;
+      height: 100%;
+
+      z-index: 1000; */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+
+    }
+
+    .main-visual img {
+      width: 100%;
+      height: auto;
+      /* 元の縦横比を維持 */
+      display: block;
+      /* 下の隙間を消すため */
+    }
+
+    .main-visual.pc {
+
+      display: block;
+
+    }
+
+    .main-visual.sp {
+      display: none;
+    }
+
+    .slideshow {
+      position: absolute;
+      width: 100%;
+      overflow: visible;
+
+    }
+
+    .slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      opacity: 0;
+      transition: opacity 2.5s ease-in-out;
+    }
+
+    /* 768px以下はスマホ用に切り替え */
+    @media screen and (max-width: 600px) {
+      .main-visual.pc {
+        display: none;
+      }
+
+      .main-visual.sp {
+        display: block;
+      }
+
+
+      .slideshow {
+        position: absolute;
+        width: 100%;
+        overflow: visible;
+      }
+
+      .slideshow img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 2.5s ease-in-out;
+      }
+
+      .mv-text {
+        position: absolute;
+        /* MVの上に重ねる */
+        bottom: 20px;
+        /* 下から20px */
+        left: 20px;
+        /* 左から20px */
+        z-index: 1010;
+        /* 画像より前面 */
+        color: #2c3f4d;
+        /* 文字色 白に */
+        font-size: 80px;
+        /* 好きな大きさに調整 */
+        font-weight: 700;
+        /* 太字 */
+        line-height: 1.1;
+        /* 行間調整 */
+      }
+
+    }
+
+
+
+    .slideshow img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+
+
+    .mv-text {
+      position: absolute;
+      /* MVの上に重ねる */
+      bottom: 20px;
+      /* 下から20px */
+      left: 20px;
+      /* 左から20px */
+      z-index: 1010;
+      /* 画像より前面 */
+      color: #2c3f4d;
+      /* 文字色 白に */
+      font-size: clamp(16px, 15vw, 250px);
+      /* 好きな大きさに調整 */
+      font-weight: 700;
+      /* 太字 */
+      line-height: 1.2;
+      padding-left: 0.2em;
+      /* 文字サイズに応じて変わる */
+      padding-bottom: 0.1em;
+      /* 文字サイズに応じて変わる */
+
+      /* 行間調整 */
+    }
+
+    p.lead {
+      margin: 0 0 18px 0;
+      color: #333;
+    }
+
+    /* ----------------------------------------
+       アクセシビリティ / 環境に応じた調整
+       - ユーザーが「動きを減らす」設定なら影やアニメを無効化
+    ---------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+
+    @media (min-width:1200px) {
+      /* 例: 画面いっぱいにcoverする大きな背景画像を使いたいとき
+      body {
+        background-image: url('images/large-bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+      }
+      */
+    }
+
+    /* ----------------------------------------
+       モバイルでの視認性向上（テキスト折返しなど）
+    ---------------------------------------- */
+    @media (max-width:600px) {
+      .wrap {
+        margin: 4vh 16px;
+        padding: 20px;
+      }
+    }
+
+    .title {
+      padding-top: 50px;
+
+      display: flex;
+      align-items: baseline;
+      text-align: left;
+      gap: 12px;
+      /* 英語と日本語の間の余白 */
+      color: #2c3f4d;
+    }
+
+    @media screen and (min-width: 769px) {
+
+      .title {
+        margin-bottom: 10%;
+
+      }
+
+    }
+
+    .title .title-en {
+      font-size: 40px;
+      font-weight: 700;
+      /* ボールド */
+    }
+
+    .title .title-ja {
+      font-size: 16px;
+      font-weight: 300;
+      /* ライト */
+      color: #555;
+      /* 少し淡い色にしても見やすい */
+    }
+
+    .category-title {
+
+      color: #2c3f4d;
+    }
+
+    .category-text {
+      color: #3e3e3e;
+      font-weight: 400;
+      line-height: 24px;
+
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 1024px) {
+      .category-title {
+
+        font-size: 28px;
+      }
+
+      .category-text {
+        font-size: 12px;
+        line-height: 24px;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      .works-item {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        flex-direction: row;
+        /* 画像とテキストの間の余白 */
+
+      }
+
+      .works-item2 {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        flex-direction: row-reverse;
+        /* 画像とテキストの間の余白 */
+
+      }
+
+      img.works-image {
+        width: 50%;
+        max-width: 500px;
+        height: auto;
+      }
+
+      .about-item {
+        margin-bottom: 15%;
+        display: flex;
+        align-items: flex-start;
+        /* 上揃えにしたい場合 */
+        gap: 8%;
+        /* 画像とテキストの間の余白 */
+      }
+
+
+      .profile-column {
+
+        display: flex;
+        flex-direction: column;
+        /* 縦並び */
+        justify-content: flex-start;
+        /* 上から順に並べる */
+        width: 60%;
+      }
+
+
+      .works-text {
+        display: flex;
+        flex-direction: column;
+        /* 縦並び */
+        justify-content: flex-start;
+        /* 上から順に並べる */
+        width: 50%;
+
+      }
+
+      .category-title {
+        font-size: 32px;
+        margin-top: 0;
+        padding-bottom: 10px;
+      }
+
+      .category-text {
+        font-size: 16px;
+        line-height: 28px;
+
+
+      }
+
+      .more-link {
+        align-self: flex-end;
+      }
+
+
+
+
+    }
+
+    @media screen and (max-width: 768px) {
+      img.works-image {
+        width: 100%;
+        /* SPの時の横幅 */
+        margin-top: 50px;
+      }
+
+      .category-title {
+        font-size: 24px;
+        margin-top: 20px;
+        color: #2c3f4d;
+      }
+
+      .category-text {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #3e3e3e;
+        font-weight: 400;
+        line-height: 24px;
+  display: block;
+      }
+    }
+
+
+
+    .more-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #3e3e3e;
+      font-weight: 400;
+      line-height: 24px;
+      text-decoration: underline;
+    }
+
+    .more-link:hover {
+      color: #1a252f;
+      /* 少し濃く */
+      text-decoration: none;
+      /* ホバー時は下線消す */
+    }
+
+      .more-link2 {
+  text-decoration: none;
+      }
+
+    .about-image {
+      width: 200px;
+      /* 円のサイズ */
+      height: 200px;
+      object-fit: cover;
+      /* 画像を切り抜き */
+      border-radius: 50%;
+      /* 円形にする */
+      display: block;
+      margin: 40px auto 20px;
+      /* 上40px / 左右auto / 下20px */
+      /* 中央寄せ＆上下余白 */
+    }
+
+    @media screen and (min-width: 769px) {
+      .about-image {
+        width: 25vw;
+        height: 25vw;
+        margin-top: 0;
+      }
+
+    }
+
+    .profile {
+      display: flex;
+      align-items: baseline;
+      text-align: left;
+      gap: 12px;
+      /* 英語と日本語の間の余白 */
+      color: #2c3f4d;
+    }
+
+    .about-title-ja {
+      font-size: 24px;
+      color: #2c3f4d;
+    }
+
+    .about-title-ja .about-title-en {
+      font-size: 16px;
+      font-weight: 300;
+      /* ライト */
+      color: #555;
+      /* 少し淡い色にしても見やすい */
+    }
+
+    @media screen and (min-width: 769px) {
+      .about-title-ja {
+        font-size: 30px;
+        color: #2c3f4d;
+      }
+
+      .about-title-ja .about-title-en {
+        font-size: 20px;
+        font-weight: 300;
+        /* ライト */
+        color: #555;
+        /* 少し淡い色にしても見やすい */
+      }
+
+    }
+
+    .profile-text {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #3e3e3e;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    @media screen and (min-width: 769px) {
+      .profile-text {
+        font-size: 16px;
+      }
+    }
+
+    .profile-button {
+
+      display: block;
+      /* ブロック要素にする */
+      width: 270px;
+      /* 中身に合わせた幅に */
+      margin: 50px auto 0;
+      /* 左右autoで中央寄せ */
+      padding: 20px 40px;
+      background-color: #fff;
+      color: #2c3f4d;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 2px solid #2c3f4d;
+      /* 枠線追加 */
+      border-radius: 100px;
+      transition: background-color 0.3s ease;
+    }
+
+
+    @media screen and (min-width: 769px) {
+      .profile-button {
+        margin-top: 50px;
+        text-align: left;
+      }
+
+    }
+
+    .profile-button:hover {
+      background-color: #2c3f4d;
+      /* ホバー時の背景色 */
+      color: #fff;
+      /* ホバー時の文字色 */
+    }
+
+    /* トップに戻るボタン */
+    .to-top {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 50px;
+      height: 50px;
+
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2000;
+      /* ハンバーガーやoverlayより前面 */
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* 表示状態 */
+    .to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ホバー時 */
+    .to-top:hover {}
+
+    footer {
+      display: block;
+      background-color: #2c3f4d;
+      padding: 20px 20px 0;
+      color: #fff;
+      font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    }
+
+    @media screen and (min-width: 769px) {
+      footer {
+        display: block;
+        background-color: #2c3f4d;
+        padding: 40px 15% 0;
+        color: #fff;
+      }
+    }
+
+    footer .footer-name {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+
+    @media screen and (min-width: 769px) {
+      footer .footer-name {
+        padding-top: 2%;
+        font-size: 5vw;
+        font-weight: 700;
+      }
+    }
+
+    .contact {
+      margin-top: 30px;
+      line-height: 1.2;
+    }
+
+
+
+    .contact-text {
+      font-size: 16px;
+      display: block;
+      /* 上下にちゃんと幅を取れるように */
+      margin-bottom: 0;
+      /* 下の余白を調整 */
+    }
+
+    .contact-mail {
+      font-weight: 500;
+      font-size: 24px;
+      text-decoration: underline;
+      display: block;
+      /* 上下に幅を取れるように */
+    }
+
+    @media screen and (min-width: 769px) {
+      .contact {
+        margin-top: 5%;
+        line-height: 1.2;
+      }
+
+      .contact-text {
+        font-size: 2vw;
+        display: block;
+        /* 上下にちゃんと幅を取れるように */
+        margin-bottom: 0;
+        /* 下の余白を調整 */
+      }
+
+      .contact-mail {
+        font-weight: 500;
+        font-size: 4vw;
+        text-decoration: underline;
+        display: block;
+        /* 上下に幅を取れるように */
+      }
+
+
+    }
+
+    .links {
+      display: block;
+      margin-top: 30px;
+    }
+
+    .links a {
+      color: #fff;
+      /* 白にする */
+      text-decoration: none;
+      /* 下線消すなら */
+    }
+
+    .link2second {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .link2third {
+      margin: 0 0 10px;
+      font-size: 14px;
+      white-space: normal;
+      line-height: 2
+    }
+
+    @media screen and (min-width: 769px) {
+      .links {
+        margin-top: 5%;
+      }
+
+      .link2second {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+
+
+      .link2third {
+        margin: 0 0 10px;
+        font-size: 16px;
+        white-space: normal;
+      }
+
+    }
+
+
+    .copyright {
+      margin-top: 30px;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      /* 下からちょっと上がる */
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* スキル全体のレイアウト */
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* 初期は1列（スマホ用） */
+      gap: 20px 20px;
+    }
+
+
+    @media screen and (min-width: 769px) {
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 行間と列間の余白 */
+      }
+    }
+
+    .sp-br {
+      display: none;
+      /* デフォルトは非表示（PCなど） */
+    }
+
+    @media screen and (max-width: 600px) {
+      .sp-br {
+        display: inline;
+        /* スマホサイズでだけ表示 */
+      }
+    }
+
+    .pc-slash {
+      display: none;
+      /* デフォルトは非表示（PCなど） */
+    }
+
+    @media screen and (min-width: 601px) {
+      .pc-slash {
+        display: inline;
+        /* スマホサイズでだけ表示 */
+      }
+
+    }
